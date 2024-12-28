@@ -287,84 +287,193 @@
 
 /* Our Services Section */
 .our-services {
-    padding: 40px 20px;
+    padding: 40px;
+    background-color: #f8f8f8;
     text-align: center;
-    background-color: #FFFFFF;
+    height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.our-services h5 {
+    font-size: 1.5rem;
+    color: #FF3600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .our-services h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #333;
     margin-bottom: 20px;
-    color: #FF3600;
+}
+
+.our-services p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
 }
 
 .services-list {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .service {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    background-color: #FFFFFF;
+    background-color: white;
     padding: 20px;
-    border: 2px solid #FF3600;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    object-fit: contain;
 }
 
 .service h3 {
+    font-size: 1.8rem;
+    color: #333;
     margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #FF3600;
 }
 
 .service p {
-    color: #666;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
 }
 
-/* How It Works Section */
-.how-it-works {
-    padding: 40px 20px;
-    background-color: #FF3600;
-    text-align: center;
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-view-all-services {
+    font-size: 1.2rem;
+    padding: 12px 30px;
     color: #FFFFFF;
+    background-color: #FF3600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: fit-content;
+    margin: 30px auto 0;
+    /* Centers the button */
+}
+
+.btn-view-all-services:hover {
+    background-color: #CC2900;
+    transform: scale(1.05);
+}
+
+.btn-view-all-services:active {
+    transform: scale(1);
+}
+
+.btn-view-all-services:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 54, 0, 0.5);
+}
+
+/* How it works */
+.how-it-works {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
 }
 
 .how-it-works h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #FF3600;
+    z-index: 1;
 }
 
 .steps {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
 }
 
 .step {
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    background-color: #FFFFFF;
-    padding: 20px;
+    background-color: #fff;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .step h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #FF3600;
+    font-size: 24px;
+    color: #2c3e50;
 }
 
 .step p {
-    color: #666;
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+/* Line Connection */
+.line-connection {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 70%;
+    height: 2px;
+    background-color: #FF3600;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: lineAnimation 3s ease-out forwards;
+}
+
+@keyframes lineAnimation {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(0.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
 /* Responsive Design Adjustments */
@@ -407,6 +516,26 @@
 
     .facility-cards {
         gap: 15px;
+    }
+
+    .our-services {
+        height: auto;
+    }
+
+    .services-list {
+        gap: 30px;
+    }
+
+    .service {
+        flex: 1;
+    }
+
+    .steps {
+        justify-content: space-between;
+    }
+
+    .step {
+        width: 30%;
     }
 }
 
@@ -465,7 +594,43 @@
 
     .btn-contact-us {
         width: 100%;
-        padding: 12px;
+        padding: 12px;   
+    }
+
+    .our-services{
+        height: auto;
+    }
+
+    .services-list {
+        gap: 20px;
+    }
+
+    .service {
+        min-width: 45%;
+    }
+
+    .our-services h2 {
+        font-size: 2.2rem;
+    }
+
+    .how-it-works{
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .steps {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .step {
+        width: 45%;
+        margin: 10px 0;
+    }
+    
+    .line-connection{
+        display: none;
     }
 }
 
@@ -529,6 +694,32 @@
     .facility-cards {
         gap: 10px;
     }
+
+    .services-list {
+        gap: 15px;
+    }
+
+    .service {
+        min-width: 100%;
+    }
+
+    .our-services h2 {
+        font-size: 2rem;
+    }
+
+    .how-it-works h2 {
+        font-size: 36px;
+    }
+
+    .steps {
+        justify-content: center;
+    }
+
+    .step {
+        width: 60%;
+        margin: 15px 0;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -578,6 +769,35 @@
     .btn-contact-us {
         padding: 10px;
     }
+
+    .service {
+        padding: 15px;
+    }
+
+    .service h3 {
+        font-size: 1.5rem;
+    }
+
+    .service p {
+        font-size: 1rem;
+    }
+
+    .our-services h2 {
+        font-size: 1.8rem;
+    }
+
+    .how-it-works h2 {
+        font-size: 36px;
+    }
+
+    .steps {
+        justify-content: center;
+    }
+
+    .step {
+        width: 80%;
+        margin: 20px 0;
+    }
 }
 
 @media (max-width: 400px) {
@@ -626,5 +846,34 @@
     .btn-contact-us {
         padding: 8px 20px;
         font-size: 1rem;
+    }
+
+    .service {
+        padding: 12px;
+    }
+
+    .service h3 {
+        font-size: 1.4rem;
+    }
+
+    .service p {
+        font-size: 0.9rem;
+    }
+
+    .our-services h2 {
+        font-size: 1.6rem;
+    }
+
+    .how-it-works h2 {
+        font-size: 20px;
+    }
+
+    .steps {
+        justify-content: center;
+    }
+
+    .step {
+        width: 90%;
+        margin: 20px 0;
     }
 }

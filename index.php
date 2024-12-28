@@ -44,40 +44,54 @@
         </div>
     </section>
 
+    <!-- our services section -->
     <section class="our-services">
-        <h2>Our Services</h2>
+        <h5>Our Car Rental Services</h5>
+        <h2>Explore our wide range of car rental options</h2>
+        <p>We offer a variety of car rental options to suit your needs, from affordable standard cars to luxury vehicles. Whether you're planning a road trip or need a reliable car for business, we have you covered.</p>
+        
         <div class="services-list">
             <div class="service">
-                <h3>Car Rentals</h3>
-                <p>Affordable car rentals for your everyday travel needs.</p>
+                <img src="./assets/images/our-services-icon1.png" alt="Standard Car Rentals Icon">
+                <h3>Standard Car Rentals</h3>
+                <p>Affordable cars for everyday use and long drives.</p>
             </div>
             <div class="service">
-                <h3>Bike Rentals</h3>
-                <p>Convenient and quick bike rentals for solo travelers.</p>
+                <img src="./assets/images/our-services-icon2.png" alt="Luxury Car Rentals Icon">
+                <h3>Luxury Car Rentals</h3>
+                <p>Experience style and comfort with our luxury car options.</p>
             </div>
             <div class="service">
-                <h3>Luxury Vehicles</h3>
-                <p>Exclusive luxury vehicles for special occasions.</p>
+                <img src="./assets/images/our-services-icon3.png" alt="Car Rental Packages Icon">
+                <h3>Car Rental Packages</h3>
+                <p>Choose from a range of rental packages that suit your journey.</p>
             </div>
         </div>
+        
+        <a href="car-rentals.html" class="btn-view-all-services">View All Services</a>
     </section>
 
     <section class="how-it-works">
-        <h2>How It Works</h2>
+        <h2>How It Works ?</h2>
         <div class="steps">
             <div class="step">
+                <img src="./assets/images/how-it-work-step1.jpg" alt="Step 1 Image">
                 <h3>Step 1</h3>
                 <p>Select the vehicle that suits your needs.</p>
             </div>
             <div class="step">
+                <img src="./assets/images/how-it-work-step2.jpg" alt="Step 2 Image">
                 <h3>Step 2</h3>
                 <p>Complete your booking in a few simple steps.</p>
             </div>
             <div class="step">
+                <img src="./assets/images/how-it-work-step3.jpg" alt="Step 3 Image">
                 <h3>Step 3</h3>
                 <p>Pick up your vehicle and enjoy your ride.</p>
             </div>
         </div>
+        <div class="line-connection"></div>
     </section>
+
 </body>
 </html>
