@@ -51,7 +51,7 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Enter your message..." required></textarea>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Send</button>
             </form>
         </div>
     </section>
