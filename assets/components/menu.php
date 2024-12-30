@@ -1,7 +1,7 @@
 <!-- Fixed Header -->
 <header class="header">
     <div class="logo">
-        <a href="#">RentaCar</a>
+        <a href="index.php">RentaCar</a>
     </div>
 
     <nav class="nav">
@@ -11,6 +11,7 @@
             <li><a href="rentacar.php" class="menu-item">Rent a Car</a></li>
             <li><a href="about.php" class="menu-item">About</a></li>
             <li><a href="contact.php" class="menu-item">Contact Us</a></li>
+            <li><a href="login.php" class="menu-item menu-login-button">Login</a></li>
         </ul>
 
         <!-- Menu Icon for Small Devices -->
@@ -27,5 +28,6 @@
         <li><a href="rentacar.php" class="side-menu-item">Rent a Car</a></li>
         <li><a href="about.php" class="side-menu-item">About</a></li>
         <li><a href="contact.php" class="side-menu-item">Contact Us</a></li>
+        <li><a href="login.php" class="side-menu-item menu-login-button">Login</a></li>
     </ul>
 </div>

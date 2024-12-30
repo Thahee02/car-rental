@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rental System</title>
+    <title>RentaCar - Vehicle Rental System</title>
+    <!-- link stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
     <?php include('./assets/components/menu.php'); ?>
     <div class="banner">
         <div class="banner-content">
-            <h1>Welcome to Our Vehicle Rental System</h1>
+            <h1>Welcome to Our Car Rental System</h1>
             <p>Rent a car effortlessly for any occasion. Choose from a variety of well-maintained vehicles. Book now for a smooth, hassle-free experience.</p>
             <button>Book A Rental</button>
         </div>
@@ -92,6 +93,8 @@
         </div>
         <div class="line-connection"></div>
     </section>
+    <?php include('./assets/components/footer.php'); ?>
 
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

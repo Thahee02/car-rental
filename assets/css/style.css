@@ -56,6 +56,21 @@
     background-color: transparent;
 }
 
+/* Button Styles for Login/Signup */
+.menu-login-button {
+    background-color: #FF3600;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-login-button:hover {
+    background-color: #CC2900;
+    color: #fff;
+    
+}
+
 /* Menu Icon for Small Devices */
 .menu-icon {
     display: none;
@@ -100,6 +115,135 @@
     color: #FF3600;
 }
 
+/* Login & Registration Page */
+.reg-log-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* Ensure the container takes the full width */
+    padding: 80px 200px;
+    padding-top: 140px;
+    flex-grow: 1;
+    /* Make the container flexible */
+    gap: 0;
+}
+
+/* Form Section */
+.reg-log-container .reg-log-form-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    /* Equal width for both sections */
+    height: 100%;
+    /* Equal height for both sections */
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensure elements are spaced evenly */
+}
+
+.reg-log-container .reg-log-form-section.login-form{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.reg-log-container .reg-log-form-section.registration-form {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Login Form Background */
+.reg-log-container .login-form {
+    background-color: #FF3600;
+    /* Bright orange background for login form */
+    color: #fff;
+    /* White text for better contrast */
+}
+
+/* Registration Form */
+.reg-log-container .registration-form {
+    background-color: #fff;
+    /* No background for registration form */
+}
+
+/* Headings */
+.reg-log-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.reg-log-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Increased gap for better spacing */
+    flex-grow: 1;
+    /* Allow form to expand within the section */
+}
+
+/* Label Styling */
+.reg-log-container label {
+    font-size: 16px;
+    /* Larger label text */
+    color: #333;
+    /* Dark gray color for text */
+}
+
+/* Input Fields */
+.reg-log-container input[type="email"],
+.reg-log-container input[type="password"] {
+    padding: 15px;
+    font-size: 16px;
+    /* Larger font size for better readability */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: #fff;
+}
+
+/* Input Focus Styling */
+.reg-log-container input[type="email"]:focus,
+.reg-log-container input[type="password"]:focus {
+    border-color: #FF3600;
+    /* Orange border on focus */
+    outline: none;
+    background-color: #f7f7f7;
+    /* Light gray background on focus */
+}
+
+/* Submit Button Styling */
+.reg-log-container button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #FF3600;
+    /* Bright orange background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.reg-log-container button:hover {
+    background-color: #e14e00;
+    /* Darker orange on hover */
+}
+
+/* Full-width Inputs and Buttons */
+.reg-log-container input[type="email"],
+.reg-log-container input[type="password"],
+.reg-log-container button {
+    width: 100%;
+}
+
 /* Banner Section */
 .banner {
     background: url('../images/main-banner.jpg') no-repeat center center/cover;
@@ -134,7 +278,7 @@
 
 .banner button {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     padding: 12px 30px;
     color: #FFFFFF;
     background-color: #FF3600;
@@ -476,6 +620,390 @@
     }
 }
 
+/* rent a car page */
+.rentCar-banner {
+    background: url('../images/rentacar-banner.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.rentCar-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.breadcrumb {
+    font-size: 1.25em;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.breadcrumb span{
+    color: #FF3600;
+    text-decoration: underline;
+}
+
+.product-slider {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-slider h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #FF3600;
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.product-card {
+    flex: 0 0 calc(25% - 20px);
+    margin: 0 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 60%;
+    padding: 0 40px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-control {
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.slider-control:hover {
+    opacity: 1;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: white;
+    /* White background for the form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for contrast */
+    width: 100%;
+    max-width: 900px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-container h2{
+    color: #FF3600;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-container h3 {
+    color: #000;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #555;
+    /* Orange color for labels */
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #FF3600;
+    border-radius: 5px;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #FF3600;
+    outline: none;
+}
+
+.card-option {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-radio {
+    display: none;
+}
+
+.card-radio:checked+.card-icon {
+    border: 2px solid #000;
+    /* Optional: add a border to the selected radio */
+    padding: 2px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 20px;
+    margin-right: 0px;
+    vertical-align: middle;
+}
+
+.card-option input[type="radio"]:checked+.card-icon+span {
+    font-weight: bold;
+}
+
+.form-container button {
+    background-color: #FF3600;
+    /* Orange background for the button */
+    color: white;
+    /* White text on the button */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.form-container button:hover {
+    background-color: #cc2a00;
+    /* Slightly darker orange on hover */
+}
+
+/* footer */
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0 20px 0;
+}
+
+/* Footer Container */
+.footer-container {
+    width: 90%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+}
+
+/* First Row - Content Sections */
+.footer-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Section Styles */
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section .logo{
+    color: #FF3600;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.footer-section .logo span{
+    color: #fff;
+}
+
+.footer-section h4 {
+    color: #FF3600;
+    /* Orange color for section titles */
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section p{
+    margin-top: 10px;
+}
+
+.footer-section ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #FF3600;
+    text-decoration: underline;
+}
+
+/* Divider Line Between Row 1 and Row 2 */
+.footer-divider {
+    border-top: 2px solid #333;
+    /* Dark border to separate rows */
+    margin: 30px 0;
+}
+
+/* Newsletter Section */
+.newsletter h4 {
+    font-size: 24px;
+    color: #FF3600;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 15px;
+    width: 100%;
+    max-width: 340px;
+    border: 2px solid #FF3600;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter input[type="email"]:focus {
+    border-color: #fff;
+}
+
+.newsletter button {
+    padding: 12px 20px;
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.newsletter button:hover {
+    background-color: #cc2d00;
+}
+
+/* Second Row - Copyright & Social Links */
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-row .copyright {
+    font-size: 14px;
+}
+
+.footer-bottom-row .copyright a{
+    color: #FF3600;
+    text-decoration: none;
+}
+
+.footer-bottom-row .copyright a:hover{
+    color: #cc2d00;
+}
+
+.footer-bottom-row .social-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom-row .social-links a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-bottom-row .social-links a:hover {
+    color: #FF3600;
+}
+
 /* Responsive Design Adjustments */
 @media (max-width: 1200px) {
     .banner h1 {
@@ -536,6 +1064,19 @@
 
     .step {
         width: 30%;
+    }
+
+    .product-card {
+        flex: 0 0 calc(33.33% - 20px);
+        /* 3 items per row */
+    }
+
+    .footer-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-section {
+        padding: 15px;
     }
 }
 
@@ -632,28 +1173,48 @@
     .line-connection{
         display: none;
     }
+
+    .product-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    .footer-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section .newsletter input,
+    .footer-section .newsletter button {
+        width: 100%;
+    }
+
+    .footer-bottom-row .social-links {
+        justify-content: center;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 768px) {
     .menu {
         display: none;
-        /* Hide regular menu on small devices */
     }
 
     .menu-icon {
         display: block;
-        /* Show menu icon on small devices */
     }
 
     .side-menu {
         display: block;
-        /* Show side menu when toggled */
     }
 
     .banner h1 {
         font-size: 3rem;
         line-height: 4.5rem;
-        /* Smaller heading on mobile devices */
     }
 
     .banner p {
@@ -664,14 +1225,11 @@
 
     .banner button {
         font-size: 1rem;
-        /* Button font size adjusted */
         padding: 10px 20px;
-        /* Padding adjusted for mobile */
     }
 
     .banner-content {
         max-width: 90%;
-        /* More space for content on mobile */
     }
 
     .about-us-image img {
@@ -718,6 +1276,26 @@
     .step {
         width: 60%;
         margin: 15px 0;
+    }
+
+    .product-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    .footer-section h4 {
+        font-size: 18px;
+    }
+
+    .footer-section ul li {
+        font-size: 14px;
+    }
+
+    .footer-bottom-row .copyright {
+        font-size: 12px;
+    }
+
+    .footer-bottom-row .social-links a {
+        font-size: 18px;
     }
 
 }
@@ -798,6 +1376,23 @@
         width: 80%;
         margin: 20px 0;
     }
+
+    .product-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .footer-section ul li {
+        font-size: 12px;
+    }
+
+    .footer-bottom-row .social-links a {
+        font-size: 16px;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -808,18 +1403,15 @@
 
     .banner p {
         font-size: 0.9rem;
-        /* Reduced paragraph size */
     }
 
     .banner button {
         font-size: 0.9rem;
         padding: 8px 15px;
-        /* Smaller button padding */
     }
 
     .banner-content {
         max-width: 100%;
-        /* Ensure content is fully responsive */
     }
 
     .about-us {
@@ -876,4 +1468,25 @@
         width: 90%;
         margin: 20px 0;
     }
+
+    .product-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .footer-section h4 {
+        font-size: 14px;
+    }
+
+    .footer-section ul li {
+        font-size: 11px;
+    }
+
+    .footer-bottom-row .copyright {
+        font-size: 10px;
+    }
+
+    .footer-bottom-row .social-links a {
+        font-size: 14px;
+    }
+
 }
