@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <section class="about-us">
+    <section class="about-us" id="about-us">
         <!-- Left Side: Image -->
         <div class="about-us-image">
             <img src="./assets/images/about-us.jpg" alt="">

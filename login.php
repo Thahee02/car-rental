@@ -38,13 +38,13 @@ session_start();
             <h2>User Registration</h2>
             <form action="register_process.php" method="POST">
                 <label for="reg-log-reg-email">Email:</label>
-                <input type="email" id="reg-log-reg-email" name="reg-log-reg-email" required placeholder="Enter your email">
+                <input type="email" id="reg-log-reg-email" name="reg-log-reg-email" required placeholder="Enter your email...">
 
                 <label for="reg-log-reg-password">Password:</label>
-                <input type="password" id="reg-log-reg-password" name="reg-log-reg-password" required placeholder="Enter your password">
+                <input type="password" id="reg-log-reg-password" name="reg-log-reg-password" required placeholder="Enter your password...">
 
                 <label for="reg-log-reg-confirm-password">Confirm Password:</label>
-                <input type="password" id="reg-log-reg-confirm-password" name="reg-log-reg-confirm-password" required placeholder="Confirm your password">
+                <input type="password" id="reg-log-reg-confirm-password" name="reg-log-reg-confirm-password" required placeholder="Confirm your password...">
 
                 <button type="submit" name="reg-log-user-register">Register</button>
             </form>
@@ -53,6 +53,8 @@ session_start();
     </div>
 
     <?php include('./assets/components/footer.php'); ?>
+
+    <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
