@@ -57,73 +57,11 @@ if (isset($_SESSION['is_login'])) {
 
     </div>
 
-    <!-- Modal HTML -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div id="modal-icon"></div>
-            <h2 id="modal-heading"></h2>
-            <hr>
-            <p id="modal-message"></p>
-            <button onclick="closeModal()">Close</button>
-        </div>
-    </div>
+    
 
     <?php include('./assets/components/footer.php'); ?>
 
-    <script>
-        // Check if there is a message in the session (passed via PHP)
-        <?php if (isset($_SESSION['modal_message'])): ?>
-            var icon = "<?php echo $_SESSION['modal_icon']; ?>";
-            var heading = "<?php echo $_SESSION['modal_heading']; ?>";
-            var message = "<?php echo $_SESSION['modal_message']; ?>";
-            var modalIcon = document.getElementById('modal-icon');
-            var modalHeading = document.getElementById('modal-heading');
-            var modalMessage = document.getElementById('modal-message');
-            var modalError = document.getElementById('modal-error');
-            showModal(message);
-            
-        <?php endif; ?>
-
-        // Function to display the modal
-        function showModal(message) {
-            modalIcon.innerHTML = icon;
-            modalHeading.innerText = heading;
-            modalMessage.innerHTML = message;
-            document.getElementById('modal').style.display = "flex";
-            
-            <?php
-                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Error!"){
-                    ?>
-                    modalHeading.style.color = "#ff3333"; 
-                    modalError.style.color = "#ff3333";
-                    <?php
-                }
-                else{
-                    ?>
-                    modalHeading.style.color = "#4CAF50"; <?php
-                } 
-            ?>
-        }
-
-        // Function to close the modal
-        function closeModal() {
-             <?php
-                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Successful!"){
-                    ?>
-                    window.location.href = 'http://localhost/car/index.php'; <?php
-                }
-                else{
-                    ?>
-                    window.location.href = 'http://localhost/car/login.php'; <?php
-                }
-                                
-                unset($_SESSION['modal_icon']); 
-                unset($_SESSION['modal_heading']); 
-                unset($_SESSION['modal_message']); 
-            
-             ?>
-        }
-    </script>
+    
 
     <script src="./assets/js/script.js"></script>
 

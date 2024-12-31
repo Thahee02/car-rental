@@ -61,6 +61,22 @@ function showCardFields() {
     }
 }
 
+// toggle submenu
+function toggleSubmenu() {
+    const submenu = document.getElementById('submenu');
+    submenu.classList.toggle('hidden');
+}
 
-
-
+// Placeholder functionality for buttons
+document.getElementById('save-info').addEventListener('click', () => alert('Personal information saved!'));
+document.getElementById('cancel-info').addEventListener('click', () => alert('Changes canceled!'));
+document.querySelectorAll('.cancel-order').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.target.parentElement.remove();
+        alert('Order canceled!');
+    });
+});
+document.getElementById('change-password-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Password changed successfully!');
+});

@@ -12,6 +12,7 @@ html{
 }
 
 .header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,6 +85,66 @@ html{
     display: none;
     font-size: 2rem;
     cursor: pointer;
+}
+
+.user-profile{
+    color: #FF3600;
+    cursor: pointer;
+    display: flex;
+    gap: -10px;
+    align-items: center;
+}
+
+.user-profile:hover{
+    color: #111;
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.submenu li {
+    border-bottom: 1px solid #eee;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.submenu li a:hover {
+    background: #f7f7f7;
+}
+
+.submenu.hidden {
+    display: none;
+}
+
+.submenu.visible {
+    display: block;
 }
 
 /* Side Menu Styles for Small Devices */
@@ -997,6 +1058,108 @@ html{
     color: #fff;
 }
 
+/* My Profile Page */
+.my-profile-banner {
+    background: url('../images/my-profile.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.my-profile-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.my-profile-profile-card {
+    width: 40%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 60px auto;
+    margin-top: 60px;
+}
+
+.my-profile-profile-card .my-profile-avatar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+}
+
+.my-profile-profile-card .my-profile-avatar img{
+    width: 125px;
+    margin: 0 auto;
+}
+
+.my-profile-section {
+    margin-bottom: 30px;
+}
+
+.my-profile-section h3 {
+    margin-bottom: 16px;
+    color: #FF3600;
+    font-size: 1.5rem;
+}
+
+.my-profile-form-group {
+    margin-bottom: 15px;
+}
+
+.my-profile-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.my-profile-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.my-profile-button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.my-profile-section button {
+    padding: 10px 15px;
+    background-color: #FF3600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.my-profile-section button:hover {
+    background-color: #cc2900;
+}
+
+.my-profile-order-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* CSS for Modal */
 .modal {
     display: none;
@@ -1289,6 +1452,10 @@ footer {
         width: 450px;
     }
 
+    .my-profile-profile-card {
+        width: 50%;
+    }
+
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1450,7 +1617,19 @@ footer {
         display: flex;
         justify-self: center;
         text-align: center;
+    }
 
+    .my-profile-profile-card {
+        width: 60%;
+    }
+
+    .my-profile-banner h1 {
+        font-size: 3rem;
+        line-height: 1.5rem;
+    }
+
+    .my-profile-section h3 {
+        font-size: 1.4rem;
     }
 
     .footer-row {
@@ -1590,6 +1769,21 @@ footer {
         font-size: 1.5rem;
     }
 
+    .my-profile-profile-card {
+        width: 80%;
+    }
+
+    .my-profile-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .my-profile-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .my-profile-profile-card .my-profile-avatar img {
+        width: 100px;
+    }
 
     .footer-section h4 {
         font-size: 18px;
@@ -1722,6 +1916,22 @@ footer {
         text-align: center;
     }
 
+    .my-profile-profile-card {
+        width: 90%;
+    }
+
+    .my-profile-banner h1 {
+        font-size: 2rem;
+    }
+
+    .my-profile-section h3 {
+        font-size: 1rem;
+    }
+
+    .my-profile-section button {
+        padding: 8px 12px;
+    }
+
     .footer-section h4 {
         font-size: 16px;
     }
@@ -1852,6 +2062,23 @@ footer {
 
     .map iframe {
         height: 200px;
+    }
+
+    .my-profile-banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .my-profile-section h3 {
+        font-size: 0.9rem;
+    }
+
+    .my-profile-profile-card .my-profile-avatar img {
+        width: 80px;
+    }
+
+    .my-profile-section button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
     }
 
     .footer-section h4 {
