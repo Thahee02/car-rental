@@ -1,3 +1,15 @@
+<?php
+// Start the session
+session_start();
+
+if (!isset($_SESSION['is_login'])) {
+    // User is already logged in, redirect to the home page
+    header("Location: index.php");
+    exit(); // Stop further execution of the script
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,25 +31,60 @@
          <div class="my-profile-avatar">
             <img src="./assets/images/my-profile-avatar.svg" alt="">
          </div>
-        <div class="my-profile-section">
+        <form method="post" class="my-profile-section">
+
+            <?php 
+
+            include('./backend/db.php');
+            
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $email = $_SESSION['user_email'];
+
+            // Escape the email to prevent SQL injection
+            $email = mysqli_real_escape_string($conn, $email);
+
+            // SQL query to fetch user details
+            $sql = "SELECT name, email, phone FROM users WHERE email = '$email'";
+
+            // Execute the query
+            $result = mysqli_query($conn, $sql);
+
+            // Check if user exists
+            if ($result && mysqli_num_rows($result) > 0) {
+                // Fetch user details
+                $user = mysqli_fetch_assoc($result);
+                $name = $user['name'];
+                $email = $user['email'];
+                $phone = $user['phone'];
+            } else {
+                echo "<p style='text-align: center;'>No user found with the given email.</p>" . $_SESSION['user_email'];
+                exit;
+            }
+
+            // Close the connection
+            mysqli_close($conn);
+
+            ?>
             <h3>Personal Information</h3>
             <div class="my-profile-form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="John Doe">
+                <input type="text" id="name" value="<?php echo htmlspecialchars($name); ?>" placeholder="John Doe">
             </div>
             <div class="my-profile-form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="johndoe@example.com">
+                <input type="email" id="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="johndoe@example.com">
             </div>
             <div class="my-profile-form-group">
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" placeholder="123-456-7890">
+                <input type="text" id="phone" value="<?php echo htmlspecialchars($phone); ?>" placeholder="123-456-7890">
             </div>
             <div class="my-profile-button-group">
-                <button id="save-info">Save</button>
-                <button id="cancel-info">Cancel</button>
+                <button type="submit" id="save-info">Save</button>
             </div>
-        </div>
+        </form>
 
         <!-- Client Orders Section -->
         <div class="my-profile-section">
