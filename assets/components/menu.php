@@ -1,7 +1,7 @@
 <!-- Fixed Header -->
 <header class="header">
     <div class="logo">
-        <a href="index.php">RentaCar</a>
+        <a href="index.php">Renta<span>Car</span></a>
     </div>
 
     <nav class="nav">
