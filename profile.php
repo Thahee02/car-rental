@@ -31,7 +31,7 @@ if (!isset($_SESSION['is_login'])) {
          <div class="my-profile-avatar">
             <img src="./assets/images/my-profile-avatar.svg" alt="">
          </div>
-        <form method="post" class="my-profile-section">
+        <form method="post" class="my-profile-section" action="./backend/log-reg/update_profile.php">
 
             <?php 
 
@@ -47,7 +47,7 @@ if (!isset($_SESSION['is_login'])) {
             $email = mysqli_real_escape_string($conn, $email);
 
             // SQL query to fetch user details
-            $sql = "SELECT name, email, phone FROM users WHERE email = '$email'";
+            $sql = "SELECT name, email, phone, nic FROM users WHERE email = '$email'";
 
             // Execute the query
             $result = mysqli_query($conn, $sql);
@@ -59,6 +59,7 @@ if (!isset($_SESSION['is_login'])) {
                 $name = $user['name'];
                 $email = $user['email'];
                 $phone = $user['phone'];
+                $nic = $user['nic'];
             } else {
                 echo "<p style='text-align: center;'>No user found with the given email.</p>" . $_SESSION['user_email'];
                 exit;
@@ -71,15 +72,19 @@ if (!isset($_SESSION['is_login'])) {
             <h3>Personal Information</h3>
             <div class="my-profile-form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" value="<?php echo htmlspecialchars($name); ?>" placeholder="John Doe">
+                <input type="text" id="name" name="userName" value="<?php echo htmlspecialchars($name); ?>" placeholder="Enter name">
             </div>
             <div class="my-profile-form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="johndoe@example.com">
+                <input type="email" readonly disabled id="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="johndoe@example.com">
             </div>
             <div class="my-profile-form-group">
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" value="<?php echo htmlspecialchars($phone); ?>" placeholder="123-456-7890">
+                <input type="text" id="phone" name="userPhone" value="<?php echo htmlspecialchars($phone); ?>" placeholder="Enter phone no.">
+            </div>
+            <div class="my-profile-form-group">
+                <label for="nic">NIC No.</label>
+                <input type="text" id="nic" name="userNIC" value="<?php echo htmlspecialchars($nic); ?>" placeholder="Enter nic no.">
             </div>
             <div class="my-profile-button-group">
                 <button type="submit" id="save-info">Save</button>
@@ -122,7 +127,75 @@ if (!isset($_SESSION['is_login'])) {
         </div>
     </div>
 
+    <!-- Modal HTML -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-icon"></div>
+            <h2 id="modal-heading"></h2>
+            <hr>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <?php include('./assets/components/footer.php'); ?>
+
+
+    <script>
+        // Check if there is a message in the session (passed via PHP)
+        <?php if (isset($_SESSION['modal_message'])): ?>
+            var icon = "<?php echo $_SESSION['modal_icon']; ?>";
+            var heading = "<?php echo $_SESSION['modal_heading']; ?>";
+            var message = "<?php echo $_SESSION['modal_message']; ?>";
+            var modalIcon = document.getElementById('modal-icon');
+            var modalHeading = document.getElementById('modal-heading');
+            var modalMessage = document.getElementById('modal-message');
+            var modalError = document.getElementById('modal-error');
+            showModal(message);
+            
+        <?php endif; ?>
+
+        // Function to display the modal
+        function showModal(message) {
+            modalIcon.innerHTML = icon;
+            modalHeading.innerText = heading;
+            modalMessage.innerHTML = message;
+            document.getElementById('modal').style.display = "flex";
+            
+            <?php
+                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Error!"){
+                    ?>
+                    modalHeading.style.color = "#ff3333"; 
+                    modalError.style.color = "#ff3333";
+                    <?php
+                }
+                else{
+                    ?>
+                    modalHeading.style.color = "#4CAF50"; <?php
+                } 
+            ?>
+        }
+
+        // Function to close the modal
+        function closeModal() {
+             <?php
+                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Successful!"){
+                    ?>
+                    window.location.href = 'http://localhost/car/profile.php'; <?php
+                }
+                else{
+                    ?>
+                    window.location.href = 'http://localhost/car/profile.php'; <?php
+                }
+                                
+                unset($_SESSION['modal_icon']); 
+                unset($_SESSION['modal_heading']); 
+                unset($_SESSION['modal_message']); 
+            
+             ?>
+        }
+    </script>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -95,6 +95,14 @@ html{
     align-items: center;
 }
 
+.user-profile a{
+    color: #FF3600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
 .user-profile:hover{
     color: #111;
 }
