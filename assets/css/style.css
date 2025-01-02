@@ -1108,6 +1108,9 @@ html{
 .my-profile-profile-card .my-profile-avatar img{
     width: 125px;
     margin: 0 auto;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .my-profile-section {
@@ -1166,6 +1169,175 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* admin-dashboard page */
+
+.admin-dashboard-banner {
+    background: url('../images/admin-dashboard.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.admin-dashboard-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.admin-dashboard-container {
+    display: flex;
+    height: auto;
+    padding: 20px 40px;
+}
+
+.admin-dashboard-sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.admin-dashboard-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-dashboard-sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.admin-dashboard-sidebar ul li a{
+    text-decoration: none;
+    color: #111;
+}
+
+.admin-dashboard-sidebar ul li a:hover{
+    color: #FF3600;
+}
+
+.admin-dashboard-sidebar ul li a.highlight {
+    font-weight: bold;
+    color: #FF3600;
+}
+
+.admin-dashboard-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.admin-dashboard-profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-profile-section img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.admin-dashboard-profile-section h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #FF3600;
+    text-transform: uppercase;
+}
+
+.admin-dashboard-profile-section p {
+    margin: 5px 0;
+    color: #2c3e50;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.admin-dashboard-stats-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-total-users,
+.admin-dashboard-total-orders {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-dashboard-total-users h1, .admin-dashboard-total-orders h1 {
+    font-size: 4rem;
+    color: #FF3600;
+}
+
+
+.admin-dashboard-social-and-performance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-dashboard-social-contacts,
+.admin-dashboard-academic-performance {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard-social-contacts div {
+    display: flex;
+    margin-top: 10px;
+}
+
+.admin-dashboard-social-contacts div img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.admin-dashboard-recommendations {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.admin-dashboard-recommendations h3 {
+    margin-top: 0;
+}
+
+.admin-dashboard-recommendations button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.admin-dashboard-recommendations button:hover {
+    background-color: #0056b3;
 }
 
 /* CSS for Modal */

@@ -29,7 +29,7 @@ if (!isset($_SESSION['is_login'])) {
     <div class="my-profile-profile-card">
         <!-- Personal Information Section -->
          <div class="my-profile-avatar">
-            <img src="./assets/images/my-profile-avatar.svg" alt="">
+            <img src="./assets/images/my-profile-avatar.jpg" alt="">
          </div>
         <form method="post" class="my-profile-section" action="./backend/log-reg/update_profile.php">
 
@@ -87,7 +87,7 @@ if (!isset($_SESSION['is_login'])) {
                 <input type="text" id="nic" name="userNIC" value="<?php echo htmlspecialchars($nic); ?>" placeholder="Enter nic no.">
             </div>
             <div class="my-profile-button-group">
-                <button type="submit" id="save-info">Save</button>
+                <button type="submit" id="save-info">Update</button>
             </div>
         </form>
 
@@ -109,18 +109,18 @@ if (!isset($_SESSION['is_login'])) {
         <!-- Change Password Section -->
         <div class="my-profile-section">
             <h3>Change Password</h3>
-            <form id="change-password-form">
+            <form id="change-password-form" action="./backend/log-reg/change_password.php" method="post">
                 <div class="my-profile-form-group">
                     <label for="old-password">Old Password</label>
-                    <input type="password" id="old-password" placeholder="Enter old password">
+                    <input type="password" id="old-password" name="old-password" placeholder="Enter old password">
                 </div>
                 <div class="my-profile-form-group">
                     <label for="new-password">New Password</label>
-                    <input type="password" id="new-password" placeholder="Enter new password">
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter new password">
                 </div>
                 <div class="my-profile-form-group">
                     <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="Confirm new password">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password">
                 </div>
                 <button type="submit">Change Password</button>
             </form>
@@ -180,8 +180,13 @@ if (!isset($_SESSION['is_login'])) {
         function closeModal() {
              <?php
                 if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Successful!"){
-                    ?>
-                    window.location.href = 'http://localhost/car/profile.php'; <?php
+
+                    if($_SESSION["modal_message"] == "Password changed successfully."){ ?>
+                        window.location.href = 'http://localhost/car/logout.php'; <?php
+                    }
+                    else{ ?>
+                        window.location.href = 'http://localhost/car/profile.php'; <?php
+                    }
                 }
                 else{
                     ?>
