@@ -62,10 +62,48 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                 exit;
             }
 
+            // find total users count
+            $query = "SELECT COUNT(*) AS total_users FROM users";
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+                // Fetch the result
+                $row = mysqli_fetch_assoc($result);
+                $totalUsers = $row['total_users'];
+
+                // Prepend a 0 if total users count is less than 10
+                if ($totalUsers < 10) {
+                    $totalUsers = "0" . $totalUsers;
+                }
+            } 
+            else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
+            // find total cars count
+            $query2 = "SELECT COUNT(*) AS total_cars FROM cars";
+            $result2 = mysqli_query($conn, $query2);
+
+            if ($result2) {
+                // Fetch the result
+                $row = mysqli_fetch_assoc($result2);
+                $totalCars = $row['total_cars'];
+
+                // Prepend a 0 if total users count is less than 10
+                if ($totalCars < 10) {
+                    $totalCars = "0" . $totalCars;
+                }
+            } 
+            else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
             // Close the connection
             mysqli_close($conn);
 
             ?>
+
+
 
             <div class="admin-dashboard-profile-section">
                 <img src="../assets/images/my-profile-avatar.jpg" alt="Profile Picture">
@@ -78,7 +116,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
             <div class="admin-dashboard-stats-section">
                 <div class="admin-dashboard-total-users">
                     <h3>Total Users:</h3>
-                    <h1>00</h1>
+                    <h1><?php echo $totalUsers; ?></h1>
                 </div>
                 <div class="admin-dashboard-total-orders">
                     <h3>Total Orders:</h3>
@@ -89,11 +127,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
             <div class="admin-dashboard-social-and-performance">
                 <div class="admin-dashboard-total-cars">
                     <h3>Total Cars:</h3>
-                    <h1>00</h1>
-                </div>
-                <div class="admin-dashboard-academic-performance">
-                    <h3>Total Orders:</h3>
-                    <h1>00</h1>
+                    <h1><?php echo $totalCars; ?></h1>
                 </div>
             </div>
         </div>

@@ -127,7 +127,7 @@
                             <input type="text" id="license-number" name="license-number" placeholder="Enter your license number" required>
                         </div>
                         <div class="form-group">
-                            <label for="issuing-authority">Issuing Authority:</label>
+                            <label for="issuing-authority">Issuing Country:</label>
                             <input type="text" id="issuing-authority" name="issuing-authority" placeholder="Enter issuing authority" required>
                         </div>
                         <div class="form-group">
@@ -144,7 +144,7 @@
                         <div class="form-group">
                             <label for="payment-method">Payment Method:</label>
                             <select id="payment-method" name="payment-method" required onchange="showCardFields()">
-                                <option value="" disabled>-- Choose a payment method --</option>
+                                <option value="" disabled selected>-- Choose a payment method --</option>
                                 <option value="credit-card">Credit Card</option>
                                 <option value="debit-card">Debit Card</option>
                                 <option value="cash">Cash</option>

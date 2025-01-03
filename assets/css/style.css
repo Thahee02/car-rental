@@ -1270,7 +1270,8 @@ html{
 }
 
 .admin-dashboard-total-users,
-.admin-dashboard-total-orders {
+.admin-dashboard-total-orders, 
+.admin-dashboard-total-cars{
     width: 48%;
     background-color: #fff;
     padding: 20px;
@@ -1281,63 +1282,9 @@ html{
     align-items: center;
 }
 
-.admin-dashboard-total-users h1, .admin-dashboard-total-orders h1 {
+.admin-dashboard-total-users h1, .admin-dashboard-total-orders h1, .admin-dashboard-total-cars h1 {
     font-size: 4rem;
     color: #FF3600;
-}
-
-
-.admin-dashboard-social-and-performance {
-    display: flex;
-    justify-content: space-between;
-}
-
-.admin-dashboard-social-contacts,
-.admin-dashboard-academic-performance {
-    width: 48%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.admin-dashboard-social-contacts div {
-    display: flex;
-    margin-top: 10px;
-}
-
-.admin-dashboard-social-contacts div img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.admin-dashboard-recommendations {
-    width: 300px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-}
-
-.admin-dashboard-recommendations h3 {
-    margin-top: 0;
-}
-
-.admin-dashboard-recommendations button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.admin-dashboard-recommendations button:hover {
-    background-color: #0056b3;
 }
 
 /* CSS for Modal */
@@ -1636,6 +1583,25 @@ footer {
         width: 50%;
     }
 
+    .admin-dashboard-container {
+        padding: 15px 30px;
+    }
+
+    .admin-dashboard-sidebar {
+        width: 220px;
+    }
+
+    .admin-dashboard-profile-section img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .admin-dashboard-total-users h1,
+    .admin-dashboard-total-orders h1,
+    .admin-dashboard-total-cars h1 {
+        font-size: 3.5rem;
+    }
+
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1812,6 +1778,31 @@ footer {
         font-size: 1.4rem;
     }
 
+    .admin-dashboard-container {
+        flex-direction: column;
+    }
+
+    .admin-dashboard-sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .admin-dashboard-main-content {
+        width: 100%;
+    }
+
+    .admin-dashboard-stats-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admin-dashboard-total-users,
+    .admin-dashboard-total-orders,
+    .admin-dashboard-total-cars {
+        width: 100%;
+    }
+    
+
     .footer-row {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1965,6 +1956,26 @@ footer {
         width: 100px;
     }
 
+    .admin-dashboard-container {
+        padding: 10px 20px;
+    }
+
+    .admin-dashboard-profile-section img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .admin-dashboard-profile-section h2 {
+        font-size: 1.3em;
+    }
+
+    .admin-dashboard-total-users h1,
+    .admin-dashboard-total-orders h1,
+    .admin-dashboard-total-cars h1 {
+        font-size: 3rem;
+    }
+        
+
     .footer-section h4 {
         font-size: 18px;
     }
@@ -2110,6 +2121,20 @@ footer {
 
     .my-profile-section button {
         padding: 8px 12px;
+    }
+
+    .admin-dashboard-container {
+        padding: 10px;
+    }
+
+    .admin-dashboard-sidebar ul li {
+        padding: 8px 0;
+    }
+
+    .admin-dashboard-total-users,
+    .admin-dashboard-total-orders,
+    .admin-dashboard-total-cars {
+        padding: 15px;
     }
 
     .footer-section h4 {
@@ -2259,6 +2284,33 @@ footer {
     .my-profile-section button {
         padding: 6px 10px;
         font-size: 0.9rem;
+    }
+
+    .admin-dashboard-profile-section img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .admin-dashboard-profile-section h2 {
+        font-size: 1.1em;
+    }
+
+    .admin-dashboard-profile-section p {
+        font-size: 0.9em;
+    }
+
+    .admin-dashboard-total-users h1,
+    .admin-dashboard-total-orders h1,
+    .admin-dashboard-total-cars h1 {
+        font-size: 2.5rem;
+    }
+
+    .admin-dashboard-sidebar {
+        padding: 10px;
+    }
+
+    .admin-dashboard-sidebar ul li {
+        font-size: 0.9em;
     }
 
     .footer-section h4 {
