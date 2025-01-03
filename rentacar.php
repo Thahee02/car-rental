@@ -1,3 +1,9 @@
+<?php
+// Start the session
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +52,7 @@
     <div class="container full-width">
         <div class="form-container">
             <h2>Rent A Car Now</h2>
-            <form action="#" method="POST">
+            <form action="./backend/rent/rent_process.php" method="POST">
                 <!-- First Row: Personal Information and Rental Details -->
                 <div class="form-row">
                     <!-- Personal Information -->
@@ -167,18 +173,18 @@
                         <!-- Card Number and CVV Fields -->
                         <div class="form-group" id="card-details" style="display:none;">
                             <label for="card-number">Card Number:</label>
-                            <input type="text" id="card-number" name="card-number" placeholder="Enter card number" required pattern="\d{16}" maxlength="16">
+                            <input type="text" id="card-number" name="card-number" placeholder="Enter card number" minlength="16" maxlength="16">
                         </div>
                         
                         <div class="form-group" id="cvv-details" style="display:none;">
                             <label for="cvv-number">CVV Number:</label>
-                            <input type="text" id="cvv-number" name="cvv-number" placeholder="Enter CVV number" required pattern="\d{3}" maxlength="3">
+                            <input type="text" id="cvv-number" name="cvv-number" placeholder="Enter CVV number" minlength="3" maxlength="3">
                         </div>
                         
                         <!-- Other fields -->
                         <div class="form-group">
                             <label for="security-deposit">Security Deposit:</label>
-                            <input type="text" id="security-deposit" name="security-deposit" placeholder="Enter deposit amount" required>
+                            <input type="text" id="security-deposit" name="security-deposit" value="20000.00" readonly  placeholder="Enter deposit amount" required>
                         </div>
                         <div class="form-group">
                             <label for="billing-address">Billing Information:</label>
@@ -194,7 +200,72 @@
         </div>
     </div>
 
+    <!-- Modal HTML -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-icon"></div>
+            <h2 id="modal-heading"></h2>
+            <hr>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <?php include('./assets/components/footer.php'); ?>
+
+    <script>
+        // Check if there is a message in the session (passed via PHP)
+        <?php if (isset($_SESSION['modal_message'])): ?>
+            var icon = "<?php echo $_SESSION['modal_icon']; ?>";
+            var heading = "<?php echo $_SESSION['modal_heading']; ?>";
+            var message = "<?php echo $_SESSION['modal_message']; ?>";
+            var modalIcon = document.getElementById('modal-icon');
+            var modalHeading = document.getElementById('modal-heading');
+            var modalMessage = document.getElementById('modal-message');
+            var modalError = document.getElementById('modal-error');
+            showModal(message);
+            
+        <?php endif; ?>
+
+        // Function to display the modal
+        function showModal(message) {
+            modalIcon.innerHTML = icon;
+            modalHeading.innerText = heading;
+            modalMessage.innerHTML = message;
+            document.getElementById('modal').style.display = "flex";
+            
+            <?php
+                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Error!"){
+                    ?>
+                    modalHeading.style.color = "#ff3333"; 
+                    modalError.style.color = "#ff3333";
+                    <?php
+                }
+                else{
+                    ?>
+                    modalHeading.style.color = "#4CAF50"; <?php
+                } 
+            ?>
+        }
+
+        // Function to close the modal
+        function closeModal() {
+             <?php
+                if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Successful!"){ ?>
+                        window.location.href = 'http://localhost/car/rentacar.php'; <?php
+                }
+                else{
+                    ?>
+                    window.location.href = 'http://localhost/car/rentacar.php'; <?php
+                }
+                                
+                unset($_SESSION['modal_icon']); 
+                unset($_SESSION['modal_heading']); 
+                unset($_SESSION['modal_message']); 
+            
+             ?>
+        }
+    </script>
 
     <script src="./assets/js/script.js"></script>
 </body>

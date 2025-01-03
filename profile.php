@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['is_login'])) {
     // User is already logged in, redirect to the home page
-    header("Location: index.php");
+    header("Location: http://localhost/car/index.php");
     exit(); // Stop further execution of the script
 }
 
