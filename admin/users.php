@@ -187,7 +187,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                         </td>
                                         <td>
                                             <!-- Delete Button -->
-                                            <form method='POST' action='delete-user.php' class='delete-user-form' style='display:inline;' onsubmit='return confirmDelete();'>
+                                            <form method='POST' action='../backend/log-reg/delete_user.php' class='delete-user-form' style='display:inline;' onsubmit='return confirmDelete();'>
                                                 <input type='hidden' name='user_id' value='{$user['id']}'>
                                                 <button type='submit' style='color:red;'>Delete</button>
                                             </form>
@@ -274,6 +274,18 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
 
             ?>
         }
+
+        // confirm message when delete user
+        function confirmDelete() {
+            var confirm = confirm("Are you sure you want to delete this user?")
+            if (confirm) {
+                return true;
+            }
+            else{
+                return false;
+            } 
+        }
+
     </script>
 
     <script src="../assets/js/script.js"></script>
