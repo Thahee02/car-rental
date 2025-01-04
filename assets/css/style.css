@@ -1365,12 +1365,10 @@ html{
 .admin-users-filter-section input,
 .admin-users-filter-section select {
     flex: 1;
-    /* Inputs and selects take the remaining space */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    /* Ensure it fills available space */
 }
 
 .admin-users-filter-section button {
@@ -1443,6 +1441,38 @@ html{
     color: #FF3600;
 }
 
+.user-role-update-form select {
+    padding: 5px 10px;
+    border: 2px solid #FF3600;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user-role-update-form select:focus {
+    outline: none;
+    border-color: #FF3600;
+}
+
+/* Delete Button */
+.delete-user-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: underline;
+}
+
+.delete-user-form button:hover {
+    background-color: #333;
+    color: white;
+}
+
 /* CSS for Modal */
 .modal {
     display: none;
@@ -1492,7 +1522,6 @@ html{
 }
 
 /* footer */
-
 footer {
     background-color: #000;
     color: #fff;
@@ -1532,7 +1561,6 @@ footer {
 
 .footer-section h4 {
     color: #FF3600;
-    /* Orange color for section titles */
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -1563,7 +1591,6 @@ footer {
 /* Divider Line Between Row 1 and Row 2 */
 .footer-divider {
     border-top: 2px solid #333;
-    /* Dark border to separate rows */
     margin: 30px 0;
 }
 
