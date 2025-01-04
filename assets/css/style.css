@@ -1287,6 +1287,162 @@ html{
     color: #FF3600;
 }
 
+/* admin - users page */
+.admin-users-banner {
+    background: url('../images/admin-users.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.admin-users-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.admin-users-container {
+    display: flex;
+    height: auto;
+    padding: 20px 40px;
+}
+
+.admin-users-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.admin-users-filter-section {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 40px 0;
+}
+
+.admin-users-filter-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.admin-users-filter-section form {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+    gap: 15px;
+    /* Spacing between fields */
+}
+
+.admin-users-filter-section form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 48%;
+    /* Two fields per row */
+}
+
+.admin-users-filter-section label {
+    flex: 0 0 30%;
+    /* Labels take 30% width */
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #333;
+    /* Text color */
+}
+
+.admin-users-filter-section input,
+.admin-users-filter-section select {
+    flex: 1;
+    /* Inputs and selects take the remaining space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    /* Ensure it fills available space */
+}
+
+.admin-users-filter-section button {
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0px;
+    justify-self: flex-end;
+}
+
+.admin-users-filter-section button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.admin-users-display-section {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.admin-users-display-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.admin-users-display-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.admin-users-display-section table th,
+.admin-users-display-section table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.admin-users-display-section table th {
+    background-color: #FF3600;
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin-users-display-section table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-users-display-section table tr:hover {
+    background-color: #FFEEE6;
+}
+
+.admin-users-display-section table td {
+    color: #333;
+}
+
+.admin-users-display-section table td:first-child,
+.admin-users-display-section table th:first-child {
+    text-align: center;
+    width: 5%;
+    font-weight: bold;
+    color: #FF3600;
+}
+
 /* CSS for Modal */
 .modal {
     display: none;
@@ -1602,6 +1758,15 @@ footer {
         font-size: 3.5rem;
     }
 
+    .admin-users-container {
+        flex-direction: column;
+    }
+
+    .admin-users-filter-section form div {
+        width: 48%;
+        /* Keep two items per row */
+    }
+
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1802,6 +1967,14 @@ footer {
         width: 100%;
     }
     
+    .admin-users-container {
+        flex-direction: column;
+    }
+
+    .admin-users-filter-section form div {
+        width: 48%;
+        /* Keep two items per row */
+    }
 
     .footer-row {
         grid-template-columns: 1fr;
@@ -1975,6 +2148,14 @@ footer {
         font-size: 3rem;
     }
         
+    .admin-users-container {
+        flex-direction: column;
+    }
+
+    .admin-users-filter-section form div {
+        width: 100%;
+        /* One item per row */
+    }
 
     .footer-section h4 {
         font-size: 18px;
@@ -2135,6 +2316,31 @@ footer {
     .admin-dashboard-total-orders,
     .admin-dashboard-total-cars {
         padding: 15px;
+    }
+
+    .admin-users-container {
+        flex-direction: column;
+    }
+
+    .admin-users-filter-section form div {
+        width: 100%;
+        /* One item per row */
+    }
+
+    .admin-users-filter-section h4 {
+        font-size: 16px;
+        /* Slightly smaller font for mobile */
+    }
+
+    .admin-users-filter-section input,
+    .admin-users-filter-section select {
+        padding: 6px;
+        /* Smaller padding for mobile */
+    }
+
+    .admin-users-filter-section button {
+        padding: 8px 12px;
+        /* Adjust button padding */
     }
 
     .footer-section h4 {
@@ -2311,6 +2517,33 @@ footer {
 
     .admin-dashboard-sidebar ul li {
         font-size: 0.9em;
+    }
+
+    .admin-users-container {
+        flex-direction: column;
+        padding: 10px;
+        /* Reduce padding on small screens */
+    }
+
+    .admin-users-filter-section form div {
+        width: 100%;
+        /* One item per row */
+    }
+
+    .admin-users-filter-section h4 {
+        font-size: 14px;
+        /* Smaller font for very small screens */
+    }
+
+    .admin-users-filter-section input,
+    .admin-users-filter-section select {
+        padding: 5px;
+        /* Adjust padding further */
+    }
+
+    .admin-users-filter-section button {
+        padding: 6px 10px;
+        /* Smaller button padding */
     }
 
     .footer-section h4 {

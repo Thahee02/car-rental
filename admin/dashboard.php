@@ -98,6 +98,24 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                 echo "Error: " . mysqli_error($conn);
             }
 
+            // find total cars count
+            $query3 = "SELECT COUNT(*) AS total_rents FROM rents";
+            $result3 = mysqli_query($conn, $query3);
+
+            if ($result3) {
+                // Fetch the result
+                $row = mysqli_fetch_assoc($result3);
+                $totalRents = $row['total_rents'];
+
+                // Prepend a 0 if total users count is less than 10
+                if ($totalRents < 10) {
+                    $totalRents = "0" . $totalRents;
+                }
+            } 
+            else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
             // Close the connection
             mysqli_close($conn);
 
@@ -119,8 +137,8 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                     <h1><?php echo $totalUsers; ?></h1>
                 </div>
                 <div class="admin-dashboard-total-orders">
-                    <h3>Total Orders:</h3>
-                    <h1>00</h1>
+                    <h3>Total Rents:</h3>
+                    <h1><?php echo $totalRents; ?></h1>
                 </div>
             </div>
 

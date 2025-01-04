@@ -80,3 +80,14 @@ document.getElementById('change-password-form').addEventListener('submit', (e) =
     e.preventDefault();
     alert('Password changed successfully!');
 });
+
+// admin users table auto increment id
+document.addEventListener("DOMContentLoaded", () => {
+    const rows = document.querySelectorAll(".admin-users-display-section tbody tr");
+    rows.forEach((row, index) => {
+        const idCell = row.querySelector("td#rowId");
+        if (idCell) {
+            idCell.textContent = index + 1; // Set row number
+        }
+    });
+});

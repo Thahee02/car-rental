@@ -86,22 +86,29 @@ session_start();
                         <div class="form-group">
                             <label for="car">Car Selected:</label>
                             <select id="car" name="car" required>
-                                <option value="" disabled selected>Select a car</option>
-                                <option value="car1">Toyota Corolla - 5 Seats - 30 MPG</option>
-                                <option value="car2">Honda Civic - 5 Seats - 32 MPG</option>
-                                <option value="car3">Ford Escape - 7 Seats - 28 MPG</option>
-                                <option value="car4">Chevrolet Suburban - 8 Seats - 20 MPG</option>
-                                <option value="car5">Nissan Altima - 5 Seats - 27 MPG</option>
-                                <option value="car6">Hyundai Sonata - 5 Seats - 29 MPG</option>
-                                <option value="car7">Jeep Wrangler - 4 Seats - 25 MPG</option>
-                                <option value="car8">Tesla Model 3 - 5 Seats - Electric</option>
-                                <option value="car9">BMW X5 - 5 Seats - 26 MPG</option>
-                                <option value="car10">Mercedes-Benz Sprinter - 12 Seats - 18 MPG</option>
-                                <option value="car11">Kia Sorento - 7 Seats - 26 MPG</option>
-                                <option value="car12">Volkswagen Passat - 5 Seats - 28 MPG</option>
-                                <option value="car13">Mazda CX-5 - 5 Seats - 25 MPG</option>
-                                <option value="car14">Audi Q7 - 7 Seats - 22 MPG</option>
-                                <option value="car15">Subaru Outback - 5 Seats - 29 MPG</option>
+                                <option value="" disabled selected>-Select a car-</option>
+                                <?php
+                                include('./backend/db.php');
+                                if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                }
+                                
+                                // Fetch available cars
+                                $sql = "SELECT car_number, car_modal, mileage, seats FROM cars WHERE status = 'available'";
+                                $result = $conn->query($sql);
+
+                                // Generate options dynamically
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<option value='{$row['car_number']}'>{$row['car_modal']} - {$row['seats']} Seats - {$row['mileage']} Mileage</option>";
+                                    }
+                                } else {
+                                    echo "<option value='' disabled>No cars available</option>";
+                                }
+
+                                $conn->close();
+                                
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">
