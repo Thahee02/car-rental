@@ -1340,9 +1340,7 @@ html{
 .admin-users-filter-section form {
     display: flex;
     flex-wrap: wrap;
-    /* Allow wrapping for smaller screens */
     gap: 15px;
-    /* Spacing between fields */
 }
 
 .admin-users-filter-section form div {
@@ -1469,6 +1467,192 @@ html{
 }
 
 .delete-user-form button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.admin-rents-banner {
+    background: url('../images/admin-rents-banner.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.admin-rents-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.filter-rents-section {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: 40px auto;
+}
+
+.filter-rents-section h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.filter-rents-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-rents-section form .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 48%;
+    /* Two fields per row */
+}
+
+.filter-rents-section label {
+    flex: 0 0 30%;
+    /* Labels take 30% of the width */
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.filter-rents-section input,
+.filter-rents-section select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-rents-section input:focus,
+.filter-rents-section select:focus {
+    border-color: #FF3600;
+    box-shadow: 0 0 5px rgba(255, 54, 0, 0.5);
+    outline: none;
+}
+
+.filter-rents-section form button {
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 0px;
+}
+
+.filter-rents-section button:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filter-rents-section button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 54, 0, 0.5);
+}
+
+.admin-rents-display-section {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.admin-rents-display-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.admin-rents-display-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.admin-rents-display-section table th,
+.admin-rents-display-section table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.admin-rents-display-section table th {
+    background-color: #FF3600;
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin-rents-display-section table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-rents-display-section table tr:hover {
+    background-color: #FFEEE6;
+}
+
+.admin-rents-display-section table td {
+    color: #333;
+}
+
+.admin-rents-display-section table td:first-child,
+.admin-rents-display-section table th:first-child {
+    text-align: center;
+    width: 5%;
+    font-weight: bold;
+    color: #FF3600;
+}
+
+.rent-status-update-form select {
+    padding: 5px 10px;
+    border: 2px solid #FF3600;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.rent-status-update-form select:focus {
+    outline: none;
+    border-color: #FF3600;
+}
+
+.delete-rent-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: underline;
+}
+
+.delete-rent-form button:hover {
     background-color: #333;
     color: white;
 }
@@ -1794,6 +1978,20 @@ footer {
         /* Keep two items per row */
     }
 
+    .filter-rents-section form .form-group {
+        width: 48%;
+        /* Keep two fields per row for wider screens */
+    }
+
+    .filter-rents-section {
+        padding: 15px;
+    }
+
+    .filter-rents-section h4,
+    .admin-rents-display-section h4 {
+        font-size: 18px;
+    }
+
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2003,6 +2201,24 @@ footer {
         /* Keep two items per row */
     }
 
+    .filter-rents-section form .form-group {
+        width: 100%;
+        /* One field per row for medium screens */
+    }
+
+    .filter-rents-section {
+        margin: 20px auto;
+    }
+
+    .admin-rents-display-section table th,
+    .admin-rents-display-section table td {
+        padding: 8px;
+    }
+
+    .admin-rents-display-section h4 {
+        font-size: 16px;
+    }
+
     .footer-row {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2179,9 +2395,54 @@ footer {
         flex-direction: column;
     }
 
-    .admin-users-filter-section form div {
+    .filter-rents-section form {
+        flex-direction: column;
+        /* Stack fields vertically */
+        gap: 15px;
+        /* Add spacing between form groups */
+    }
+
+    .filter-rents-section form .form-group {
         width: 100%;
-        /* One item per row */
+        flex-direction: column;
+        align-items: flex-start;
+        /* Form groups take full width */
+    }
+
+    .filter-rents-section label {
+        flex: 0 0 100%;
+        /* Labels take the full width */
+        text-align: left;
+        /* Align text to the left */
+        margin-bottom: 5px;
+        /* Add spacing below labels */
+    }
+
+    .filter-rents-section input,
+    .filter-rents-section select {
+        flex: 1;
+        width: 100%;
+        /* Inputs and selects take full width */
+    }
+
+    .filter-rents-section form button {
+        width: 100%;
+        /* Button takes full width */
+        margin-top: 10px;
+        /* Add spacing above the button */
+    }
+
+    .filter-rents-section h4 {
+        font-size: 18px;
+        /* Adjust heading size */
+        margin-bottom: 15px;
+        /* Adjust spacing below heading */
+    }
+
+    .admin-rents-display-section table th:first-child,
+    .admin-rents-display-section table td:first-child {
+        width: auto;
+        /* Adjust column width */
     }
 
     .footer-section h4 {
@@ -2368,6 +2629,30 @@ footer {
     .admin-users-filter-section button {
         padding: 8px 12px;
         /* Adjust button padding */
+    }
+
+    .filter-rents-section {
+        padding: 10px;
+    }
+
+    .filter-rents-section h4,
+    .admin-rents-display-section h4 {
+        font-size: 14px;
+    }
+
+    .filter-rents-section form {
+        gap: 10px;
+    }
+
+    .filter-rents-section form .form-group {
+        width: 100%;
+        /* Single field per row */
+    }
+
+    .admin-rents-display-section table th,
+    .admin-rents-display-section table td {
+        font-size: 12px;
+        padding: 6px;
     }
 
     .footer-section h4 {
@@ -2571,6 +2856,37 @@ footer {
     .admin-users-filter-section button {
         padding: 6px 10px;
         /* Smaller button padding */
+    }
+
+    .filter-rents-section {
+        margin: 10px auto;
+        padding: 8px;
+    }
+
+    .filter-rents-section h4 {
+        font-size: 12px;
+    }
+
+    .filter-rents-section form {
+        flex-direction: column;
+        /* Stack fields vertically */
+    }
+
+    .filter-rents-section label {
+        font-size: 12px;
+    }
+
+    .filter-rents-section input,
+    .filter-rents-section select,
+    .filter-rents-section form button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .admin-rents-display-section table th,
+    .admin-rents-display-section table td {
+        font-size: 10px;
+        padding: 4px;
     }
 
     .footer-section h4 {

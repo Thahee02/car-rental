@@ -139,7 +139,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                     <!-- Filter by Role -->
                     <div>
                         <label for="filter-role">Role:</label>
-                        <select id="filter-role" name="filter-role">
+                        <select id="filter-role" name="filter-role"> 
                             <option value="" disabled selected>-Select role-</option>
                             <option value="admin" <?php if ($filterRole === 'admin') echo 'selected'; ?>>Admin</option>
                             <option value="user" <?php if ($filterRole === 'user') echo 'selected'; ?>>User</option>

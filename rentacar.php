@@ -159,8 +159,8 @@ session_start();
                             <select id="payment-method" name="payment-method" required onchange="showCardFields()">
                                 <option value="" disabled selected>-- Choose a payment method --</option>
                                 <option value="credit-card">Credit Card</option>
-                                <option value="debit-card">Debit Card</option>
                                 <option value="cash">Cash</option>
+                                <option value="bank-transfer">Bank Transfer</option>
                             </select>
                         </div>
                         
@@ -192,6 +192,14 @@ session_start();
                         <div class="form-group">
                             <label for="security-deposit">Security Deposit:</label>
                             <input type="text" id="security-deposit" name="security-deposit" value="20000.00" readonly  placeholder="Enter deposit amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="total-amount">Total Amount:</label>
+                            <input type="text" id="total-amount" name="total-amount" value="0.00" readonly  placeholder="total amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="balance-amount">Balance Amount:</label>
+                            <input type="text" id="balance-amount" name="balance-amount" value="0.00" readonly  placeholder="balance amount" required>
                         </div>
                         <div class="form-group">
                             <label for="billing-address">Billing Information:</label>
