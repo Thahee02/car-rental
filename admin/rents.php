@@ -90,7 +90,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
             $filterStatus = $_GET['filter-status'] ?? '';
 
             // SQL Query with filters
-            $sql = "SELECT id, user_email, booked_date, c_name, c_email, c_phone, c_nic, car_name, pay_method, status FROM rents WHERE 1=1";
+            $sql = "SELECT id, user_email, booked_date, c_name, c_email, c_phone, c_nic, car_name, pay_method, total_amount, security_deposit, balance_amount, status FROM rents WHERE 1=1";
 
             // Add filters to the SQL query
             if (!empty($filterUserEmail)) {
@@ -210,6 +210,9 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                             <th>Customer Phone</th>
                             <th>Car Name</th>
                             <th>Payment Method</th>
+                            <th>Total Amount</th>
+                            <th>Security Deposite</th>
+                            <th>Balance Amount</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -227,9 +230,12 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                         <td>{$rent['c_phone']}</td>
                                         <td>{$rent['car_name']}</td>
                                         <td>{$rent['pay_method']}</td>
+                                        <td>{$rent['total_amount']}</td>
+                                        <td>{$rent['security_deposit']}</td>
+                                        <td>{$rent['balance_amount']}</td>
                                         <td>
                                             <!-- Status Update Form -->
-                                            <form method='POST' action='../backend/rents/update_status.php' class='rent-status-update-form' style='display:inline;'>
+                                            <form method='POST' action='../backend/rent/update_rent_status.php' class='rent-status-update-form' style='display:inline;'>
                                                 <input type='hidden' name='rent_id' value='{$rent['id']}'>
                                                 <select name='rent_status' onchange='this.form.submit()'>
                                                     <option value='pending'" . ($rent['status'] === 'pending' ? ' selected' : '') . ">Pending</option>
@@ -323,16 +329,15 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
         function closeModal() {
             <?php
                 if(isset($_SESSION['modal_message']) && $_SESSION['modal_heading'] == "Successful!"){ ?>
-                    window.location.href = 'http://localhost/car/admin/users.php'; <?php
+                    window.location.href = 'http://localhost/car/admin/rents.php'; <?php
                 }
                 else{ ?>
-                    window.location.href = 'http://localhost/car/admin/users.php'; <?php
+                    window.location.href = 'http://localhost/car/admin/rents.php'; <?php
                 }
                                 
                 unset($_SESSION['modal_icon']);
                 unset($_SESSION['modal_heading']);
                 unset($_SESSION['modal_message']);
-
             ?>
         }
 
