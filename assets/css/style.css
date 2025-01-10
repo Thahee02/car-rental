@@ -1657,6 +1657,249 @@ html{
     color: white;
 }
 
+/* admin cars page */
+
+.admin-cars-banner {
+    background: url('../images/admin-cars-banner.jpg') no-repeat center center/cover;
+    color: #FFFFFF;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+}
+
+.admin-cars-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.filter-cars-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-cars-section h4 {
+    color: #FF3600;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter-cars-section .form-group {
+    margin-bottom: 15px;
+}
+
+.filter-cars-section .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.filter-cars-section .form-group input,
+.filter-cars-section .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.filter-cars-section .form-group input:focus,
+.filter-cars-section .form-group select:focus {
+    border-color: #FF3600;
+    outline: none;
+}
+
+.filter-cars-section button[type="submit"] {
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 0px;
+}
+
+.filter-cars-section button[type="submit"]:hover {
+    background-color: #e63200;
+}
+
+.filter-cars-section button[type="reset"] {
+    background-color: #333;
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-cars-section button[type="reset"]:hover {
+    background-color: #444;
+}
+
+.admin-cars-main-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    margin-top: 40px;
+}
+
+.admin-cars-main-content h4 {
+    color: #FF3600;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Table Styles */
+.admin-cars-main-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-cars-main-content table thead {
+    background-color: #FF3600;
+    color: #fff;
+}
+
+.admin-cars-main-content table th,
+.admin-cars-main-content table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.admin-cars-main-content table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-cars-main-content table tbody tr:hover {
+    background-color: #ffe6e0;
+}
+
+/* Status Colors */
+.admin-cars-main-content .status-available {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.admin-cars-main-content .status-rented {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Buttons */
+.admin-cars-main-content .btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.admin-cars-main-content .btn-delete:hover {
+    background-color: #b52a33;
+}
+
+.admin-cars-main-content .btn-edit {
+    background-color: #FF3600;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-cars-main-content .btn-edit:hover {
+    background-color: #cc2d00;
+}
+
+.admin-cars-add-car-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    width: 100%;
+}
+
+.admin-cars-add-car-section h4 {
+    color: #FF3600;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+.admin-cars-form-group {
+    margin-bottom: 15px;
+}
+
+.admin-cars-form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.admin-cars-form-group input,
+.admin-cars-form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.admin-cars-form-group input:focus,
+.admin-cars-form-group select:focus {
+    border-color: #FF3600;
+    outline: none;
+}
+
+/* Button Styles */
+.admin-cars-btn-submit {
+    background-color: #FF3600;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.admin-cars-btn-submit:hover {
+    background-color: #e63a00;
+}
+
 /* CSS for Modal */
 .modal {
     display: none;
@@ -1955,7 +2198,7 @@ footer {
     }
 
     .admin-dashboard-sidebar {
-        width: 220px;
+        width: 100%;
     }
 
     .admin-dashboard-profile-section img {
@@ -1990,6 +2233,22 @@ footer {
     .filter-rents-section h4,
     .admin-rents-display-section h4 {
         font-size: 18px;
+    }
+
+    .filter-cars-section {
+        padding: 15px;
+    }
+
+    .filter-cars-section h4 {
+        font-size: 22px;
+    }
+
+    .filter-cars-section button {
+        font-size: 15px;
+    }
+
+    .admin-cars-add-car-section {
+        width: 85%;
     }
 
     .footer-row {
@@ -2219,6 +2478,23 @@ footer {
         font-size: 16px;
     }
 
+    .filter-cars-section {
+        padding: 10px;
+    }
+
+    .filter-cars-section .form-group label {
+        font-size: 14px;
+    }
+
+    .filter-cars-section .form-group input,
+    .filter-cars-section .form-group select {
+        font-size: 14px;
+    }
+
+    .admin-cars-add-car-section {
+        width: 90%;
+    }
+
     .footer-row {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2397,52 +2673,68 @@ footer {
 
     .filter-rents-section form {
         flex-direction: column;
-        /* Stack fields vertically */
         gap: 15px;
-        /* Add spacing between form groups */
     }
 
     .filter-rents-section form .form-group {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        /* Form groups take full width */
     }
 
     .filter-rents-section label {
         flex: 0 0 100%;
-        /* Labels take the full width */
         text-align: left;
-        /* Align text to the left */
         margin-bottom: 5px;
-        /* Add spacing below labels */
     }
 
     .filter-rents-section input,
     .filter-rents-section select {
         flex: 1;
         width: 100%;
-        /* Inputs and selects take full width */
     }
 
     .filter-rents-section form button {
         width: 100%;
-        /* Button takes full width */
         margin-top: 10px;
-        /* Add spacing above the button */
     }
 
     .filter-rents-section h4 {
         font-size: 18px;
-        /* Adjust heading size */
         margin-bottom: 15px;
-        /* Adjust spacing below heading */
     }
 
     .admin-rents-display-section table th:first-child,
     .admin-rents-display-section table td:first-child {
         width: auto;
         /* Adjust column width */
+    }
+
+    .filter-cars-section {
+        padding: 10px;
+    }
+
+    .filter-cars-section h4 {
+        font-size: 20px;
+    }
+
+    .filter-cars-section button {
+        font-size: 14px;
+    }
+
+    .admin-cars-add-car-section {
+        width: 95%;
+    }
+
+    .admin-cars-form-group input,
+    .admin-cars-form-group select {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .admin-cars-btn-submit {
+        padding: 10px 15px;
+        font-size: 14px;
     }
 
     .footer-section h4 {
@@ -2653,6 +2945,38 @@ footer {
     .admin-rents-display-section table td {
         font-size: 12px;
         padding: 6px;
+    }
+
+    .filter-cars-section {
+        padding: 8px;
+    }
+
+    .filter-cars-section h4 {
+        font-size: 18px;
+    }
+
+    .filter-cars-section button {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .admin-cars-add-car-section {
+        width: 100%;
+    }
+
+    .admin-cars-form-group input,
+    .admin-cars-form-group select {
+        padding: 7px;
+        font-size: 14px;
+    }
+
+    .admin-cars-btn-submit {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .admin-cars-add-car-section h4 {
+        font-size: 20px;
     }
 
     .footer-section h4 {
@@ -2887,6 +3211,35 @@ footer {
     .admin-rents-display-section table td {
         font-size: 10px;
         padding: 4px;
+    }
+
+    .filter-cars-section h4 {
+        font-size: 16px;
+    }
+
+    .filter-cars-section button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .admin-cars-add-car-section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .admin-cars-form-group input,
+    .admin-cars-form-group select {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .admin-cars-btn-submit {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .admin-cars-add-car-section h4 {
+        font-size: 18px;
     }
 
     .footer-section h4 {

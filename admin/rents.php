@@ -175,9 +175,9 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                         <label for="filter-payment-method">Payment Method:</label>
                         <select id="filter-payment-method" name="filter-payment-method">
                             <option value="" disabled selected>-Select payment method-</option>
-                            <option value="credit_card" <?php if ($filterPaymentMethod === 'credit-card') echo 'selected'; ?>>Credit Card</option>
+                            <option value="credit-card" <?php if ($filterPaymentMethod === 'credit-card') echo 'selected'; ?>>Credit Card</option>
                             <option value="cash" <?php if ($filterPaymentMethod === 'cash') echo 'selected'; ?>>Cash</option>
-                            <option value="bank_transfer" <?php if ($filterPaymentMethod === 'bank-transfer') echo 'selected'; ?>>Bank Transfer</option>
+                            <option value="bank-transfer" <?php if ($filterPaymentMethod === 'bank-transfer') echo 'selected'; ?>>Bank Transfer</option>
                         </select>
                     </div>
 
@@ -246,7 +246,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                         </td>
                                         <td>
                                             <!-- Delete Button -->
-                                            <form method='POST' action='../backend/rents/delete_rent.php' class='delete-rent-form' style='display:inline;' onsubmit='return confirmDelete();'>
+                                            <form method='POST' action='../backend/rent/delete_rent.php' class='delete-rent-form' style='display:inline;' onsubmit='return confirmDelete();'>
                                                 <input type='hidden' name='rent_id' value='{$rent['id']}'>
                                                 <button type='submit' style='color:red;'>Delete</button>
                                             </form>
@@ -254,19 +254,12 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                     </tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='10' style='text-align:center;'>No rents found</td></tr>";
+                            echo "<tr><td colspan='13' style='text-align:center;'>No rents found</td></tr>";
                         }
                         ?>
                     </tbody>
                 </table>
             </div>
-
-            <script>
-                // Confirm before deleting
-                function confirmDelete() {
-                    return confirm("Are you sure you want to delete this rent?");
-                }
-            </script>
 
             <?php
             // Close the connection
@@ -343,8 +336,9 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
 
         // confirm message when delete user
         function confirmDelete() {
-            var confirm = confirm("Are you sure you want to delete this user?")
-            if (confirm) {
+            
+            var confirmMessage = confirm("Are you sure you want to delete this user?")
+            if (confirmMessage) {
                 return true;
             }
             else{

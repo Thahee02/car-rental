@@ -51,13 +51,13 @@ function showCardFields() {
 
     // Show/hide card fields based on payment method selection
     if (paymentMethod === "credit-card" || paymentMethod === "debit-card") {
-        paymentIcons.style.display = "block";  // Show Visa/MasterCard options
-        cardDetails.style.display = "block";   // Show card number input
-        cvvDetails.style.display = "block";    // Show CVV input
+        paymentIcons.style.display = "block";  // Show Visa/M
+        cardDetails.style.display = "block";   // Show 
+        cvvDetails.style.display = "block";    
     } else {
-        paymentIcons.style.display = "none";   // Hide Visa/MasterCard options
-        cardDetails.style.display = "none";    // Hide card number input
-        cvvDetails.style.display = "none";     // Hide CVV input
+        paymentIcons.style.display = "none";   // Hide Visa/M
+        cardDetails.style.display = "none";    // Hide 
+        cvvDetails.style.display = "none";     
     }
 }
 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rows.forEach((row, index) => {
         const idCell = row.querySelector("td#rowId");
         if (idCell) {
-            idCell.textContent = index + 1; // Set row number
+            idCell.textContent = index + 1; 
         }
     });
 });
