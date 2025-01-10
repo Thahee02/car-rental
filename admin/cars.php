@@ -96,7 +96,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                     $filterConditions[] = "status = '$status'";
                 }
 
-                $sql2 = "SELECT id, car_number, car_model, seats, day_rent, status FROM cars";
+                $sql2 = "SELECT id, car_number, car_modal, seats, day_rent, status FROM cars";
                 if (!empty($filterConditions)) {
                     $sql2 .= " WHERE " . implode(" AND ", $filterConditions);
                 }
@@ -168,20 +168,18 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                         
                     <?php
 
-                        echo $result2;
-
                         if ($result2 && mysqli_num_rows($result2) > 0) {
                             while ($car = mysqli_fetch_assoc($result2)) {
                                 $statusClass = strtolower($car['status']) === 'available' ? 'status-available' : 'status-rented';
                                 echo "<tr>
                                     <td>{$car['id']}</td>
                                     <td>{$car['car_number']}</td>
-                                    <td>{$car['car_model']}</td>
+                                    <td>{$car['car_modal']}</td>
                                     <td>{$car['seats']}</td>
                                     <td>{$car['day_rent']}</td>
                                     <td class='$statusClass'>{$car['status']}</td>
                                     <td>
-                                        <form method='POST' action='../backend/cars/delete_car.php' onsubmit='return confirmDelete();'>
+                                        <form method='POST' action='../backend/car/delete_car.php' onsubmit='return confirmDelete();'>
                                             <input type='hidden' name='car_number' value='{$car['car_number']}'>
                                             <button type='submit' class='btn-delete'>Delete</button>
                                         </form>
@@ -324,7 +322,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
         // confirm message when delete user
         function confirmDelete() {
             
-            var confirmMessage = confirm("Are you sure you want to delete this user?")
+            var confirmMessage = confirm("Are you sure you want to delete this car?")
             if (confirmMessage) {
                 return true;
             }

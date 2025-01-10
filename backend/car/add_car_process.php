@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle the image upload
     $image = $_FILES['image']['name'];
     $image_tmp = $_FILES['image']['tmp_name'];
-    $image_folder = "../../assets/images/" . $image;
+    $image_folder = "../../assets/images/cars/" . $image;
 
     // Check if image file is uploaded and move it to the destination folder
     if (!empty($image)) {

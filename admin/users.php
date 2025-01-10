@@ -189,7 +189,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                             <!-- Delete Button -->
                                             <form method='POST' action='../backend/log-reg/delete_user.php' class='delete-user-form' style='display:inline;' onsubmit='return confirmDelete();'>
                                                 <input type='hidden' name='user_id' value='{$user['id']}'>
-                                                <button type='submit' style='color:red;'>Delete</button>
+                                                <button type='submit'>Delete</button>
                                             </form>
                                         </td>
                                     </tr>";

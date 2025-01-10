@@ -248,7 +248,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                             <!-- Delete Button -->
                                             <form method='POST' action='../backend/rent/delete_rent.php' class='delete-rent-form' style='display:inline;' onsubmit='return confirmDelete();'>
                                                 <input type='hidden' name='rent_id' value='{$rent['id']}'>
-                                                <button type='submit' style='color:red;'>Delete</button>
+                                                <button type='submit'>Delete</button>
                                             </form>
                                         </td>
                                     </tr>";
@@ -337,7 +337,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
         // confirm message when delete user
         function confirmDelete() {
             
-            var confirmMessage = confirm("Are you sure you want to delete this user?")
+            var confirmMessage = confirm("Are you sure you want to delete this order?")
             if (confirmMessage) {
                 return true;
             }
