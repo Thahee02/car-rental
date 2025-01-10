@@ -229,6 +229,9 @@ session_start();
         </div>
     </div>
 
+    <?php include('./assets/components/footer.php'); ?>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Get references to the form fields

@@ -95,16 +95,61 @@ if (!isset($_SESSION['is_login'])) {
         <div class="my-profile-section">
             <h3>Rental History</h3>
             <div id="orders">
-                <div class="my-profile-order-item">
-                    <span>Order #12345 - $200</span>
-                    <button class="cancel-order">Cancel Order</button>
-                </div>
-                <div class="my-profile-order-item">
-                    <span>Order #12344 - $150</span>
-                    <button class="cancel-order">Cancel Order</button>
-                </div>
+                <?php
+                include('./backend/db.php');
+                
+                $email = $_SESSION['user_email'];
+                $email = mysqli_real_escape_string($conn, $email);
+                
+                // Query to get rental orders
+                $sql = "SELECT id, total_amount, security_deposit, balance_amount, booked_date, car_name, status FROM rents WHERE user_email = '$email' ORDER BY booked_date DESC";
+                $result = mysqli_query($conn, $sql);
+                
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $total_amount = $row['total_amount'];
+                        $security_deposit = $row['security_deposit'];
+                        $balance_amount = $row['balance_amount'];  
+                        $booked_date = $row['booked_date'];
+                        $status = $row['status'];
+                        $car_number = $row['car_name'];
+                        
+                        echo "<div class='my-profile-order-item'>";
+                            echo "<div class='item-card'>";
+
+                                $sql2 = "SELECT image FROM cars WHERE car_number = '$car_number'";
+                                $result2 = mysqli_query($conn, $sql2);
+
+                                if ($result2 && mysqli_num_rows($result2) > 0) {
+                                    $car = mysqli_fetch_assoc($result2);
+                                    $car_image = $car['image'];
+                                
+                                echo "<img src='./assets/images/cars/$car_image' class='item-image'>"; }
+                                echo "<div class='item-details'>";
+                            
+                                    echo "<p><span>Order:</span> #$id</p>";
+                                    echo "<p><span>Total Amount:</span> $total_amount</p>";
+                                    echo "<p><span>Security Deposit:</span> $security_deposit</p>";
+                                    echo "<p><span>Balance Amount:</span> $balance_amount</p>";
+                                    echo "<p><span>Booked Date:</span> $booked_date</p>";
+
+                                echo "</div>";
+                            echo "</div>";                   
+                        
+                            echo "<span class='booked-order'>$status</span>";
+                        
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>No rental history found.</p>";
+                }
+                
+                mysqli_close($conn);
+                ?>
             </div>
         </div>
+
 
         <!-- Change Password Section -->
         <div class="my-profile-section">

@@ -1169,6 +1169,35 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+}
+
+
+.my-profile-order-item .item-card{
+    display: flex;
+    gap: 20px;
+}
+
+.my-profile-order-item .item-card .item-image{
+    width: 150px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.my-profile-order-item .item-card .item-details p span{
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.my-profile-order-item .booked-order{
+    color: #28a745;
+    font-weight: bold;
+    background-color: #e6e4e4;
+    padding: 5px 5px;
+    border: 5px;
+    text-transform: capitalize;
+
 }
 
 /* admin-dashboard page */
