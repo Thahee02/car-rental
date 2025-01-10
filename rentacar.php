@@ -108,13 +108,13 @@ session_start();
                                 }
                                 
                                 // Fetch available cars
-                                $sql = "SELECT car_number, car_modal, mileage, seats FROM cars WHERE status = 'available'";
+                                $sql = "SELECT car_number, car_modal, mileage, seats, day_rent FROM cars WHERE status = 'available'";
                                 $result = $conn->query($sql);
 
                                 // Generate options dynamically
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<option value='{$row['car_number']}'>{$row['car_modal']} - {$row['seats']} Seats - {$row['mileage']} Mileage</option>";
+                                        echo "<option value='{$row['car_number']}' data-day-rent='{$row['day_rent']}'>{$row['car_modal']} - {$row['seats']} Seats - {$row['mileage']} Mileage</option>";
                                     }
                                 } else {
                                     echo "<option value='' disabled>No cars available</option>";
@@ -229,20 +229,49 @@ session_start();
         </div>
     </div>
 
-    <!-- Modal HTML -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div id="modal-icon"></div>
-            <h2 id="modal-heading"></h2>
-            <hr>
-            <p id="modal-message"></p>
-            <button onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <?php include('./assets/components/footer.php'); ?>
-
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the form fields
+            const rentalStartDate = document.getElementById('rental-period-start');
+            const rentalEndDate = document.getElementById('rental-period-end');
+            const carSelect = document.getElementById('car');
+            const totalAmountField = document.getElementById('total-amount');
+            const balanceAmountField = document.getElementById('balance-amount');
+            const securityDepositField = document.getElementById('security-deposit');
+            let dayRent = 0;
+
+            // Function to calculate the difference in days
+            function calculateRentalPeriod() {
+                const startDate = new Date(rentalStartDate.value);
+                const endDate = new Date(rentalEndDate.value);
+                const timeDifference = endDate - startDate;
+                const dayDifference = timeDifference / (1000 * 3600 * 24); // Convert milliseconds to days
+
+                return dayDifference;
+            }
+
+            // Function to update the total and balance amount
+            function updateTotalAmount() {
+                const rentalDays = calculateRentalPeriod();
+                if (rentalDays > 0 && carSelect.value && dayRent) {
+                    const totalAmount = rentalDays * dayRent; // Calculate the total rent
+                    const balanceAmount = totalAmount - securityDepositField.value; // Subtract security deposit
+                    totalAmountField.value = totalAmount.toFixed(2);
+                    balanceAmountField.value = balanceAmount.toFixed(2);
+                }
+            }
+
+            // Event listeners for changes in rental dates or car selection
+            rentalStartDate.addEventListener('change', updateTotalAmount);
+            rentalEndDate.addEventListener('change', updateTotalAmount);
+            carSelect.addEventListener('change', function() {
+                // When car is selected, retrieve its day rent from the database
+                const selectedCar = carSelect.options[carSelect.selectedIndex];
+                dayRent = parseFloat(selectedCar.getAttribute('data-day-rent')); // Fetch day rent from selected car's data attribute
+                updateTotalAmount();
+            });
+        });
+
         // Check if there is a message in the session (passed via PHP)
         <?php if (isset($_SESSION['modal_message'])): ?>
             var icon = "<?php echo $_SESSION['modal_icon']; ?>";
