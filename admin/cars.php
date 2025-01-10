@@ -150,7 +150,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                 </form>
             </div>
 
-            <div class="admin-cars-main-content">
+           <div class="admin-cars-main-content">
                 <h4>Cars</h4>
                 <table>
                     <thead>
@@ -165,35 +165,41 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                         </tr>
                     </thead>
                     <tbody>
-                        
-                    <?php
-
-                        if ($result2 && mysqli_num_rows($result2) > 0) {
-                            while ($car = mysqli_fetch_assoc($result2)) {
-                                $statusClass = strtolower($car['status']) === 'available' ? 'status-available' : 'status-rented';
-                                echo "<tr>
-                                    <td>{$car['id']}</td>
-                                    <td>{$car['car_number']}</td>
-                                    <td>{$car['car_modal']}</td>
-                                    <td>{$car['seats']}</td>
-                                    <td>{$car['day_rent']}</td>
-                                    <td class='$statusClass'>{$car['status']}</td>
-                                    <td>
-                                        <form method='POST' action='../backend/car/delete_car.php' onsubmit='return confirmDelete();'>
-                                            <input type='hidden' name='car_number' value='{$car['car_number']}'>
-                                            <button type='submit' class='btn-delete'>Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>";
+                        <?php
+                            if ($result2 && mysqli_num_rows($result2) > 0) {
+                                while ($car = mysqli_fetch_assoc($result2)) {
+                                    echo "<tr>
+                                        <td>{$car['id']}</td>
+                                        <td>{$car['car_number']}</td>
+                                        <td>{$car['car_modal']}</td>
+                                        <td>{$car['seats']}</td>
+                                        <td>{$car['day_rent']}</td>
+                                        <td>
+                                            <form method='POST' action='../backend/car/update_car_status.php'>
+                                                <input type='hidden' name='car_number' value='{$car['car_number']}'>
+                                                <select name='status' onchange='this.form.submit()'>
+                                                    <option value='available' " . ($car['status'] == 'available' ? 'selected' : '') . ">Available</option>
+                                                    <option value='booked' " . ($car['status'] == 'booked' ? 'selected' : '') . ">Booked</option>
+                                                    <option value='maintenance' " . ($car['status'] == 'maintenance' ? 'selected' : '') . ">Maintenance</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form method='POST' action='../backend/car/delete_car.php' onsubmit='return confirmDelete();'>
+                                                <input type='hidden' name='car_number' value='{$car['car_number']}'>
+                                                <button type='submit' class='btn-delete'>Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='7' class='text-center'>No cars found</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='7' class='text-center'>No cars found</td></tr>";
-                        }
-                    ?>
-
+                        ?>
                     </tbody>
                 </table>
             </div>
+
 
             <div class="admin-cars-add-car-section">
                 <h4>Add a New Car</h4>
