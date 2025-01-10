@@ -229,6 +229,17 @@ session_start();
         </div>
     </div>
 
+    <!-- Modal HTML -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div id="modal-icon"></div>
+            <h2 id="modal-heading"></h2>
+            <hr>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <?php include('./assets/components/footer.php'); ?>
 
 
