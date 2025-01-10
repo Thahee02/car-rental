@@ -25,22 +25,36 @@ session_start();
         <h2>Our Cars</h2>
         <div class="slider-container">
             <div class="slider-track" id="slider-track">
+                <?php
+
+                include './backend/db.php';
+
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT * FROM cars";
+                $result = $conn->query($sql);
+
+                $cars = [];
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $cars[] = $row;
+                    }
+                }
+                $conn->close();
+                ?>
                 <!-- 15 Manual Cards -->
-                <div class="product-card"><img src="./assets/images/Ford Escape.avif" alt="Car 1"><h3>Car Model 1</h3><p>Seats: 5</p><p>Speed: 120 mph</p><p>Mileage: 30 MPG</p></div>
-                <div class="product-card"><img src="car2.jpg" alt="Car 2"><h3>Car Model 2</h3><p>Seats: 7</p><p>Speed: 130 mph</p><p>Mileage: 25 MPG</p></div>
-                <div class="product-card"><img src="car3.jpg" alt="Car 3"><h3>Car Model 3</h3><p>Seats: 5</p><p>Speed: 110 mph</p><p>Mileage: 35 MPG</p></div>
-                <div class="product-card"><img src="car4.jpg" alt="Car 4"><h3>Car Model 4</h3><p>Seats: 5</p><p>Speed: 140 mph</p><p>Mileage: Electric</p></div>
-                <div class="product-card"><img src="car5.jpg" alt="Car 5"><h3>Car Model 5</h3><p>Seats: 7</p><p>Speed: 125 mph</p><p>Mileage: 28 MPG</p></div>
-                <div class="product-card"><img src="car6.jpg" alt="Car 6"><h3>Car Model 6</h3><p>Seats: 5</p><p>Speed: 115 mph</p><p>Mileage: 32 MPG</p></div>
-                <div class="product-card"><img src="car7.jpg" alt="Car 7"><h3>Car Model 7</h3><p>Seats: 5</p><p>Speed: 120 mph</p><p>Mileage: 30 MPG</p></div>
-                <div class="product-card"><img src="car8.jpg" alt="Car 8"><h3>Car Model 8</h3><p>Seats: 5</p><p>Speed: 135 mph</p><p>Mileage: Electric</p></div>
-                <div class="product-card"><img src="car9.jpg" alt="Car 9"><h3>Car Model 9</h3><p>Seats: 7</p><p>Speed: 100 mph</p><p>Mileage: 29 MPG</p></div>
-                <div class="product-card"><img src="car10.jpg" alt="Car 10"><h3>Car Model 10</h3><p>Seats: 5</p><p>Speed: 140 mph</p><p>Mileage: 26 MPG</p></div>
-                <div class="product-card"><img src="car11.jpg" alt="Car 11"><h3>Car Model 11</h3><p>Seats: 7</p><p>Speed: 115 mph</p><p>Mileage: 33 MPG</p></div>
-                <div class="product-card"><img src="car12.jpg" alt="Car 12"><h3>Car Model 12</h3><p>Seats: 5</p><p>Speed: 120 mph</p><p>Mileage: 34 MPG</p></div>
-                <div class="product-card"><img src="car13.jpg" alt="Car 13"><h3>Car Model 13</h3><p>Seats: 5</p><p>Speed: 130 mph</p><p>Mileage: 28 MPG</p></div>
-                <div class="product-card"><img src="car14.jpg" alt="Car 14"><h3>Car Model 14</h3><p>Seats: 7</p><p>Speed: 110 mph</p><p>Mileage: Electric</p></div>
-                <div class="product-card"><img src="car15.jpg" alt="Car 15"><h3>Car Model 15</h3><p>Seats: 5</p><p>Speed: 125 mph</p><p>Mileage: 27 MPG</p></div>
+                <?php foreach ($cars as $car): ?>
+                <div class="product-card">
+                    <img src="./assets/images/cars/<?php echo htmlspecialchars($car['image']); ?>" alt="Car">
+                    <h3><?php echo htmlspecialchars($car['car_modal']); ?></h3>
+                    <p>Seats: <?php echo $car['seats']; ?></p>
+                    <p>Speed: <?php echo $car['speed']; ?> mph</p>
+                    <p>Mileage: <?php echo htmlspecialchars($car['mileage']); ?></p>
+                    <p>Rent(Day): <?php echo htmlspecialchars($car['day_rent']); ?></p>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="slider-controls">
