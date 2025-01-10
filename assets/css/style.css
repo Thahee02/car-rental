@@ -2281,6 +2281,15 @@ footer {
         width: 85%;
     }
 
+    .my-profile-order-item {
+        gap: 15px;
+    }
+
+    .my-profile-order-item .item-card .item-image {
+        width: 130px;
+        height: 90px;
+    }
+
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2525,6 +2534,21 @@ footer {
         width: 90%;
     }
 
+    .my-profile-order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .my-profile-order-item .item-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .my-profile-order-item .item-card .item-image {
+        width: 120px;
+        height: 80px;
+    }
+
     .footer-row {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2764,6 +2788,19 @@ footer {
 
     .admin-cars-btn-submit {
         padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .my-profile-order-item {
+        padding: 8px;
+    }
+
+    .my-profile-order-item .item-card .item-image {
+        width: 100px;
+        height: 70px;
+    }
+
+    .my-profile-order-item .booked-order {
         font-size: 14px;
     }
 
@@ -3007,6 +3044,19 @@ footer {
 
     .admin-cars-add-car-section h4 {
         font-size: 20px;
+    }
+
+    .my-profile-order-item {
+        gap: 10px;
+    }
+
+    .my-profile-order-item .item-card .item-image {
+        width: 90px;
+        height: 60px;
+    }
+
+    .my-profile-order-item .item-card .item-details p {
+        font-size: 14px;
     }
 
     .footer-section h4 {
@@ -3270,6 +3320,28 @@ footer {
 
     .admin-cars-add-car-section h4 {
         font-size: 18px;
+    }
+
+    .my-profile-order-item {
+        padding: 5px;
+    }
+
+    .my-profile-order-item .item-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-profile-order-item .item-card .item-image {
+        width: 80px;
+        height: 50px;
+    }
+
+    .my-profile-order-item .item-card .item-details p {
+        font-size: 12px;
+    }
+
+    .my-profile-order-item .booked-order {
+        font-size: 12px;
     }
 
     .footer-section h4 {
