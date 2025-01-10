@@ -178,9 +178,9 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                             <form method='POST' action='../backend/car/update_car_status.php'>
                                                 <input type='hidden' name='car_number' value='{$car['car_number']}'>
                                                 <select name='status' onchange='this.form.submit()'>
-                                                    <option value='available' " . ($car['status'] == 'available' ? 'selected' : '') . ">Available</option>
-                                                    <option value='booked' " . ($car['status'] == 'booked' ? 'selected' : '') . ">Booked</option>
-                                                    <option value='maintenance' " . ($car['status'] == 'maintenance' ? 'selected' : '') . ">Maintenance</option>
+                                                    <option value='available'" . ($car['status'] == 'available' ? 'selected' : '') . ">Available</option>
+                                                    <option value='booked'" . ($car['status'] == 'booked' ? 'selected' : '') . ">Booked</option>
+                                                    <option value='maintenance'" . ($car['status'] == 'maintenance' ? 'selected' : '') . ">Maintenance</option>
                                                 </select>
                                             </form>
                                         </td>
