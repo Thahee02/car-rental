@@ -175,7 +175,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                                         <td>{$car['seats']}</td>
                                         <td>{$car['day_rent']}</td>
                                         <td>
-                                            <form method='POST' action='../backend/car/update_car_status.php'>
+                                            <form method='POST' action='../backend/car/update_car_status.php' class='car-status-update-form'>
                                                 <input type='hidden' name='car_id' value='{$car['id']}'>
                                                 <select name='car-status' onchange='this.form.submit()'>
                                                     <option value='available'" . ($car['status'] == 'available' ? 'selected' : '') . ">Available</option>

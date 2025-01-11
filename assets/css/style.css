@@ -1826,6 +1826,21 @@ html{
     background-color: #ffe6e0;
 }
 
+.car-status-update-form select {
+    padding: 5px 10px;
+    border: 2px solid #FF3600;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.car-status-update-form select:focus {
+    outline: none;
+    border-color: #FF3600;
+}
+
 /* Status Colors */
 .admin-cars-main-content .status-available {
     color: #28a745;
