@@ -92,7 +92,7 @@ if (!isset($_SESSION['is_login'])) {
         </form>
 
         <!-- Client Orders Section -->
-        <div class="my-profile-section">
+        <div class="my-profile-section rental-history">
             <h3>Rental History</h3>
             <div id="orders">
                 <?php

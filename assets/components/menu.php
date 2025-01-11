@@ -45,6 +45,22 @@
         <li><a href="http://localhost/car/rentacar.php" class="side-menu-item">Rent a Car</a></li>
         <li><a href="http://localhost/car/index.php#about-us" class="side-menu-item">About</a></li>
         <li><a href="http://localhost/car/contact.php" class="side-menu-item">Contact Us</a></li>
-        <li><a href="http://localhost/car/login.php" class="side-menu-item menu-login-button">Login</a></li>
+
+        <?php
+        if(isset($_SESSION['is_login'])){
+            if($_SESSION['user_role'] == 'admin'){ ?>
+                <li><a href="http://localhost/car/admin/dashboard.php" class="side-menu-item">Dashboard</a></li>
+            <?php
+            } 
+        ?>
+            <li><a href="http://localhost/car/profile.php" class="side-menu-item">Profile</a></li>
+            <li><a href="http://localhost/car/logout.php" class="side-menu-item">Logout</a></li>
+        <?php  
+        }
+        else { ?>
+            <li><a href="http://localhost/car/login.php" class="side-menu-item menu-login-button">Login</a></li>
+        <?php
+        }
+        ?>
     </ul>
 </div>

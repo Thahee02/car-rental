@@ -76,9 +76,10 @@ html{
 
 .menu-login-button:hover {
     background-color: #CC2900;
-    color: #fff;
-    
+    color: #fff;   
 }
+
+
 
 /* Menu Icon for Small Devices */
 .menu-icon {
@@ -147,6 +148,8 @@ html{
     background: #f7f7f7;
 }
 
+
+
 .submenu.hidden {
     display: none;
 }
@@ -190,6 +193,10 @@ html{
 .side-menu-item:hover,
 .side-menu-item.active {
     color: #FF3600;
+}
+
+.side-menu .menu-login-button{
+    color: white;
 }
 
 /* Login & Registration Page */
@@ -1107,14 +1114,19 @@ html{
 
 .my-profile-profile-card .my-profile-avatar img{
     width: 125px;
-    margin: 0 auto;
     height: 125px;
+    margin: 0 auto;
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .my-profile-section {
     margin-bottom: 30px;
+}
+
+.rental-history{
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
 .my-profile-section h3 {
@@ -1169,10 +1181,8 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    
+    gap: 20px;    
 }
-
 
 .my-profile-order-item .item-card{
     display: flex;
@@ -2700,6 +2710,7 @@ footer {
 
     .my-profile-profile-card .my-profile-avatar img {
         width: 100px;
+        height: 100px;
     }
 
     .admin-dashboard-container {
@@ -3201,6 +3212,7 @@ footer {
 
     .my-profile-profile-card .my-profile-avatar img {
         width: 80px;
+        height: 80px;
     }
 
     .my-profile-section button {
