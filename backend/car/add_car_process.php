@@ -1,5 +1,5 @@
 <?php
-// Start session and check if the user is logged in and is an admin
+
 session_start();
 
 if (!isset($_SESSION['is_login']) || $_SESSION['user_role'] != 'admin') {
@@ -8,17 +8,16 @@ if (!isset($_SESSION['is_login']) || $_SESSION['user_role'] != 'admin') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Include database connection
+    
     include('../db.php');
 
-    // Get POST data and sanitize input
     $car_number = mysqli_real_escape_string($conn, $_POST['car_number']);
     $car_model = mysqli_real_escape_string($conn, $_POST['car_model']);
     $speed = mysqli_real_escape_string($conn, $_POST['speed']);
     $mileage = mysqli_real_escape_string($conn, $_POST['mileage']);
     $seats = intval($_POST['seats']);
     $day_rent = floatval($_POST['day_rent']);
-    $status = 'available'; // Default status for new cars
+    $status = 'available';
     
     // Handle the image upload
     $image = $_FILES['image']['name'];

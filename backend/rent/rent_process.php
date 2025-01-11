@@ -1,5 +1,5 @@
 <?php
-// Start the session
+
 session_start();
 
 // Check if the user is logged in, if not, redirect to login.php
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    include "../db.php"; // Include database connection file
+    include "../db.php"; 
 
     // Connect to the database
     if ($conn->connect_error) {

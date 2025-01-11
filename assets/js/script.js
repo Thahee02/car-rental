@@ -4,9 +4,9 @@ function toggleMenu() {
     const currentLeft = sideMenu.style.left;
     
     if (currentLeft === '0px') {
-        sideMenu.style.left = '-250px'; // Hide the menu
+        sideMenu.style.left = '-250px';
     } else {
-        sideMenu.style.left = '0px'; // Show the menu
+        sideMenu.style.left = '0px';
     }
 }
 
@@ -46,7 +46,7 @@ const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 let position = 0;
 
-const cardWidth = document.querySelector('.product-card').offsetWidth + 20; // Including margin
+const cardWidth = document.querySelector('.product-card').offsetWidth + 20;
 
 prevButton.addEventListener('click', () => {
     position += cardWidth;
@@ -69,12 +69,12 @@ function showCardFields() {
 
     // Show/hide card fields based on payment method selection
     if (paymentMethod === "credit-card" || paymentMethod === "debit-card") {
-        paymentIcons.style.display = "block";  // Show Visa/M
-        cardDetails.style.display = "block";   // Show 
+        paymentIcons.style.display = "block";  
+        cardDetails.style.display = "block";   
         cvvDetails.style.display = "block";    
     } else {
-        paymentIcons.style.display = "none";   // Hide Visa/M
-        cardDetails.style.display = "none";    // Hide 
+        paymentIcons.style.display = "none";   
+        cardDetails.style.display = "none";    
         cvvDetails.style.display = "none";     
     }
 }

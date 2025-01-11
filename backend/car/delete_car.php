@@ -1,8 +1,7 @@
 <?php
-// Start the session
+
 session_start();
 
-// Include database connection
 include('../db.php');
 
 // Check if the user is logged in and has the role of 'admin'

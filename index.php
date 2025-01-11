@@ -1,5 +1,5 @@
 <?php
-// Start the session to store login information (if needed)
+
 session_start();
 
 ?>

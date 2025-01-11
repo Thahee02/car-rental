@@ -1,7 +1,7 @@
 <?php
 
-session_start(); // Start the session to store modal data
-include "../db.php"; // Include database connection file
+session_start();
+include "../db.php"; 
 
 // Function to set modal data
 function setModalData($icon, $heading, $message) {
@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Retrieve and sanitize user inputs
+    
     $oldPassword = trim($_POST["old-password"]);
     $newPassword = trim($_POST["new-password"]);
     $confirmPassword = trim($_POST["confirm-password"]);

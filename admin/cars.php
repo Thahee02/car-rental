@@ -41,17 +41,13 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
 
             $email = $_SESSION['user_email'];
 
-            // Escape the email to prevent SQL injection
             $email = mysqli_real_escape_string($conn, $email);
 
             $sql = "SELECT name, role FROM users WHERE email = '$email'";
 
-            // Execute the query
             $result = mysqli_query($conn, $sql);
 
-            // Check if user exists
             if ($result && mysqli_num_rows($result) > 0) {
-                // Fetch user details
                 $user = mysqli_fetch_assoc($result);
                 $name = $user['name'];
                 $role = $user['role'];
@@ -200,7 +196,6 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                 </table>
             </div>
 
-
             <div class="admin-cars-add-car-section">
                 <h4>Add a New Car</h4>
                 <form action="../backend/car/add_car_process.php" method="POST" enctype="multipart/form-data">
@@ -250,8 +245,6 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
                     <button type="submit" class="admin-cars-btn-submit">Add A Car</button>
                 </form>
             </div>
-
-
 
             <?php
             // Close the connection

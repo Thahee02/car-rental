@@ -1,7 +1,7 @@
 <?php
 
-session_start(); // Start the session to store messages
-include "../db.php"; // Include database connection file
+session_start(); 
+include "../db.php"; 
 
 // Function to set modal data
 function setModalData($icon, $heading, $message) {

@@ -1,11 +1,11 @@
 <?php
-// Start the session to store login information (if needed)
+
 session_start();
 
 if (isset($_SESSION['is_login'])) {
     // User is already logged in, redirect to the home page
     header("Location: index.php");
-    exit(); // Stop further execution of the script
+    exit(); 
 }
 
 ?>
@@ -57,11 +57,7 @@ if (isset($_SESSION['is_login'])) {
 
     </div>
 
-    
-
     <?php include('./assets/components/footer.php'); ?>
-
-    
 
     <script src="./assets/js/script.js"></script>
 

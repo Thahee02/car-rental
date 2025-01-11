@@ -5,7 +5,7 @@
             <!-- Section 1: Logo and Slogan -->
             <div class="footer-section">
                 <div class="logo">
-                    <a href="#">Renta<span>Car</span></a>
+                    <a href="http://localhost/car/index.php">Renta<span>Car</span></a>
                 </div>
                 <p>Your trusted partner in reliable car rental</p>
             </div>
@@ -24,10 +24,10 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Rent A Car</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="http://localhost/car/index.php">Home</a></li>
+                    <li><a href="http://localhost/car/rentacar.php">Rent A Car</a></li>
+                    <li><a href="http://localhost/car/index.php#about-us">About Us</a></li>
+                    <li><a href="http://localhost/car/contact.php">Contact Us</a></li>
                 </ul>
             </div>
             
@@ -50,7 +50,7 @@
         <!-- Row 2: Copyright and Social Links -->
         <div class="footer-bottom-row">
             <div class="copyright">
-                <p>&copy; 2024 <a href="index.php">RentaCar.com</a>. All rights reserved.</p>
+                <p>&copy; 2025 <a href="index.php">RentaCar.com</a>. All rights reserved.</p>
             </div>
             <div class="social-links">
                 <a href="#" target="_blank">

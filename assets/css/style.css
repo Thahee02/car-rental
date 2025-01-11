@@ -51,7 +51,6 @@ html{
     gap: 20px;
 }
 
-
 .menu-item {
     color: gray;
     text-decoration: none;
@@ -248,9 +247,7 @@ html{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Increased gap for better spacing */
     flex-grow: 1;
-    /* Allow form to expand within the section */
 }
 
 /* Label Styling */
@@ -270,12 +267,10 @@ html{
     padding: 15px;
     padding-left: 2px;
     font-size: 16px;
-    /* Larger font size for better readability */
     border: 1px solid #ccc;
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    /* border-radius: 5px; */
     transition: border-color 0.3s ease, background-color 0.3s ease;
     background-color: #fff;
 }
@@ -390,7 +385,6 @@ html{
     gap: 50px;
     flex-wrap: wrap;
     max-width: 95%;
-    /* Ensures wrapping on smaller devices */
 }
 
 .about-us-image{
@@ -481,7 +475,6 @@ html{
 
 .btn-contact-us {
     font-size: 1.2rem;
-    /* font-weight: bold; */
     padding: 12px 30px;
     color: #FFFFFF;
     background-color: #FF3600;
@@ -513,7 +506,6 @@ html{
     background-color: #f8f8f8;
     text-align: center;
     height: 100vh;
-    /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -592,7 +584,6 @@ html{
     transition: background-color 0.3s, transform 0.2s;
     width: fit-content;
     margin: 30px auto 0;
-    /* Centers the button */
 }
 
 .btn-view-all-services:hover {
@@ -956,7 +947,6 @@ html{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    /* height: 100vh; */
     padding: 80px 0;
 }
 
@@ -1201,7 +1191,6 @@ html{
 }
 
 /* admin-dashboard page */
-
 .admin-dashboard-banner {
     background: url('../images/admin-dashboard.jpg') no-repeat center center/cover;
     color: #FFFFFF;
@@ -1377,16 +1366,13 @@ html{
     flex-direction: row;
     align-items: center;
     width: 48%;
-    /* Two fields per row */
 }
 
 .admin-users-filter-section label {
     flex: 0 0 30%;
-    /* Labels take 30% width */
     margin-bottom: 0;
     font-weight: bold;
     color: #333;
-    /* Text color */
 }
 
 .admin-users-filter-section input,
@@ -1548,12 +1534,10 @@ html{
     flex-direction: row;
     align-items: center;
     width: 48%;
-    /* Two fields per row */
 }
 
 .filter-rents-section label {
     flex: 0 0 30%;
-    /* Labels take 30% of the width */
     margin-bottom: 0;
     font-weight: bold;
     color: #333;
@@ -1687,7 +1671,6 @@ html{
 }
 
 /* admin cars page */
-
 .admin-cars-banner {
     background: url('../images/admin-cars-banner.jpg') no-repeat center center/cover;
     color: #FFFFFF;
@@ -2002,7 +1985,6 @@ footer {
 /* Footer Container */
 .footer-container {
     width: 90%;
-    /* max-width: 1200px; */
     margin: 0 auto;
 }
 
@@ -2158,24 +2140,19 @@ footer {
     .banner h1 {
         font-size: 4.5rem;
         line-height: 5.5rem;
-        /* Slightly smaller heading on large tablets and small desktops */
     }
 
     .banner p {
         font-size: 1.3rem;
-        /* Adjust paragraph font size */
     }
 
     .banner button {
         font-size: 1.1rem;
-        /* Slightly smaller button font */
         padding: 10px 25px;
-        /* Slightly reduced padding */
     }
 
     .banner-content {
         max-width: 80%;
-        /* Allow more content space on medium screens */
     }
 
     .about-us {
@@ -2217,7 +2194,6 @@ footer {
 
     .product-card {
         flex: 0 0 calc(33.33% - 20px);
-        /* 3 items per row */
     }
 
     .map iframe {
@@ -2262,12 +2238,10 @@ footer {
 
     .admin-users-filter-section form div {
         width: 48%;
-        /* Keep two items per row */
     }
 
     .filter-rents-section form .form-group {
         width: 48%;
-        /* Keep two fields per row for wider screens */
     }
 
     .filter-rents-section {
@@ -2345,24 +2319,19 @@ footer {
     .banner h1 {
         font-size: 3.5rem;
         line-height: 4.5rem;
-        /* Smaller heading for tablets */
     }
 
     .banner p {
         font-size: 1.2rem;
-        /* Adjust paragraph size */
     }
 
     .banner button {
         font-size: 1rem;
-        /* Adjust button font size */
         padding: 10px 20px;
-        /* Reduced padding for smaller devices */
     }
 
     .banner-content {
         max-width: 85%;
-        /* More content space on tablets */
     }
 
     .about-us {
@@ -2514,12 +2483,10 @@ footer {
 
     .admin-users-filter-section form div {
         width: 48%;
-        /* Keep two items per row */
     }
 
     .filter-rents-section form .form-group {
         width: 100%;
-        /* One field per row for medium screens */
     }
 
     .filter-rents-section {
@@ -2780,7 +2747,6 @@ footer {
     .admin-rents-display-section table th:first-child,
     .admin-rents-display-section table td:first-child {
         width: auto;
-        /* Adjust column width */
     }
 
     .filter-cars-section {
@@ -2862,19 +2828,15 @@ footer {
 
     .banner p {
         font-size: 1rem;
-        /* Further reduce paragraph font size */
     }
 
     .banner button {
         font-size: 1rem;
-        /* Button font size further reduced */
         padding: 8px 18px;
-        /* Padding reduced for smaller devices */
     }
 
     .banner-content {
         max-width: 96%;
-        /* Full-width content on very small screens */
     }
 
     .about-us {
@@ -2990,23 +2952,19 @@ footer {
 
     .admin-users-filter-section form div {
         width: 100%;
-        /* One item per row */
     }
 
     .admin-users-filter-section h4 {
         font-size: 16px;
-        /* Slightly smaller font for mobile */
     }
 
     .admin-users-filter-section input,
     .admin-users-filter-section select {
         padding: 6px;
-        /* Smaller padding for mobile */
     }
 
     .admin-users-filter-section button {
         padding: 8px 12px;
-        /* Adjust button padding */
     }
 
     .filter-rents-section {
@@ -3024,7 +2982,6 @@ footer {
 
     .filter-rents-section form .form-group {
         width: 100%;
-        /* Single field per row */
     }
 
     .admin-rents-display-section table th,
@@ -3258,28 +3215,23 @@ footer {
     .admin-users-container {
         flex-direction: column;
         padding: 10px;
-        /* Reduce padding on small screens */
     }
 
     .admin-users-filter-section form div {
         width: 100%;
-        /* One item per row */
     }
 
     .admin-users-filter-section h4 {
         font-size: 14px;
-        /* Smaller font for very small screens */
     }
 
     .admin-users-filter-section input,
     .admin-users-filter-section select {
         padding: 5px;
-        /* Adjust padding further */
     }
 
     .admin-users-filter-section button {
         padding: 6px 10px;
-        /* Smaller button padding */
     }
 
     .filter-rents-section {
@@ -3293,7 +3245,6 @@ footer {
 
     .filter-rents-section form {
         flex-direction: column;
-        /* Stack fields vertically */
     }
 
     .filter-rents-section label {

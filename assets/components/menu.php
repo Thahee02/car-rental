@@ -50,7 +50,6 @@
     <?php } ?>
 </header>
 
-
 <!-- Side Menu for Mobile Devices -->
 <div class="side-menu" id="sideMenu">
     <ul>
