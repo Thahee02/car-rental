@@ -325,7 +325,7 @@ if(!isset($_SESSION['is_login']) && !isset( $_SESSION['user_role']) == 'admin'){
             ?>
         }
 
-        // confirm message when delete user
+        // confirm message when delete car
         function confirmDelete() {
             
             var confirmMessage = confirm("Are you sure you want to delete this car?")
