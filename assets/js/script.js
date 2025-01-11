@@ -23,6 +23,24 @@ menuItems.forEach(item => {
     });
 });
 
+// submenu toggle function
+let submenu = false;
+let submenuEl = document.querySelector('.submenu');
+function toggleSubmenu() {
+    submenu = !submenu
+    if (submenu) {
+        submenuEl.style.display = 'flex'
+    }
+    else{
+        submenuEl.style.display = 'none'
+    }
+
+    console.log(submenu);
+    
+}
+
+
+// slider 
 const track = document.getElementById('slider-track');
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
@@ -59,12 +77,6 @@ function showCardFields() {
         cardDetails.style.display = "none";    // Hide 
         cvvDetails.style.display = "none";     
     }
-}
-
-// toggle submenu
-function toggleSubmenu() {
-    const submenu = document.getElementById('submenu');
-    submenu.classList.toggle('hidden');
 }
 
 // Placeholder functionality for buttons

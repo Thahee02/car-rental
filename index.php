@@ -20,7 +20,7 @@ session_start();
         <div class="banner-content">
             <h1>Welcome to Our Car Rental System</h1>
             <p>Rent a car effortlessly for any occasion. Choose from a variety of well-maintained vehicles. Book now for a smooth, hassle-free experience.</p>
-            <button>Book A Rental</button>
+            <a href="http://localhost/car/rentacar.php"><button>Book A Rental</button></a>
         </div>
     </div>
 

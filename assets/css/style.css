@@ -79,8 +79,6 @@ html{
     color: #fff;   
 }
 
-
-
 /* Menu Icon for Small Devices */
 .menu-icon {
     display: none;
@@ -115,8 +113,8 @@ html{
 
 .submenu {
     position: absolute;
-    top: 100px;
-    right: 0;
+    top: 102.5%;
+    right: 1%;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -125,7 +123,7 @@ html{
     margin: 0;
     padding: 0;
     z-index: 9999;
-    display: none;
+    display: none;  
 }
 
 .submenu li {
@@ -146,16 +144,7 @@ html{
 
 .submenu li a:hover {
     background: #f7f7f7;
-}
-
-
-
-.submenu.hidden {
-    display: none;
-}
-
-.submenu.visible {
-    display: block;
+    color: #FF3600;
 }
 
 /* Side Menu Styles for Small Devices */
@@ -2316,6 +2305,10 @@ footer {
 
     .menu-icon {
         display: block;
+    }
+
+    .submenu{
+        display: none !important;
     }
 
     .side-menu {
